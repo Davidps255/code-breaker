@@ -1,8 +1,10 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-
+const SPEED: float = 5.0
+const JUMP_VELOCITY: float = 4.5
+const MOUSE_SENSITIVITY: float = 0.01
+const MIN_CAMERA_ROTATION: int = -30
+const MAX_CAMERA_ROTATION: int = 60
 @export var neck: Node3D
 @export var camera: Camera3D
 
@@ -36,6 +38,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * 0.01)
-			camera.rotate_x(-event.relative.y * 0.01)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+			neck.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
+			camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(MIN_CAMERA_ROTATION), deg_to_rad(MAX_CAMERA_ROTATION))
