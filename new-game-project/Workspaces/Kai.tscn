@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cju2xotny3c5u"]
+
+[ext_resource type="Script" uid="uid://ce3iogoj0bmus" path="res://Assets/Scripts/player_body.gd" id="1_7hkgt"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o4uuu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hkgt"]
+height = 2.0375977
+
+[node name="Kai" type="Node3D" unique_id=1877062512]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=598705516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8621826, 0, -0.22061157)
+use_collision = true
+size = Vector3(17.802979, 1, 12.968811)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=458031514 node_paths=PackedStringArray("neck", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10306573, 0)
+script = ExtResource("1_7hkgt")
+neck = NodePath("Neck")
+camera = NodePath("Neck/Camera3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1202843615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4465435, 0)
+mesh = SubResource("CapsuleMesh_o4uuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1253380853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4403542, 0)
+shape = SubResource("CapsuleShape3D_7hkgt")
+
+[node name="Neck" type="Node3D" parent="CharacterBody3D" unique_id=1275281443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1727152, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck" unique_id=1124225803]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1888594225]
+transform = Transform3D(1, 0, 0, 0, 0.8609818, 0.50863576, 0, -0.50863576, 0.8609818, 0, 6.781724, 12.971146)
