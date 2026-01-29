@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://dpk8ug86agfcy"]
 
+[ext_resource type="Script" uid="uid://clbwjn4vp184c" path="res://scripts/command_line.gd" id="1_nq3dx"]
+
 [node name="Eli" type="Node3D" unique_id=1779811429]
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=1898959036]
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1898959036 node_paths=PackedStringArray("line_edit")]
 offset_left = 60.0
 offset_top = 22.0
 offset_right = 968.0
 offset_bottom = 367.0
+script = ExtResource("1_nq3dx")
+line_edit = NodePath(".")
+
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="received_command"]
