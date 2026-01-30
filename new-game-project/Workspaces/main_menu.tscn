@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/main_menu.gd" id="1_iq3f8"]
 [ext_resource type="PackedScene" uid="uid://cju2xotny3c5u" path="res://Workspaces/Kai.tscn" id="2_1tal6"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iq3f8"]
+[ext_resource type="AudioStream" uid="uid://cksm4kcu8l4xn" path="res://Assets/level2.mp3" id="5_whw48"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s2xg"]
 bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
@@ -37,6 +38,9 @@ corner_radius_bottom_left = 16
 corner_detail = 6
 shadow_color = Color(0, 0, 0, 1)
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tal6"]
+bg_color = Color(0.11372549, 0.13333334, 0.16078432, 1)
 
 [node name="Main Menu" type="Control" unique_id=1513136603]
 layout_mode = 3
@@ -79,7 +83,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 40
 
 [node name="DropDown" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=2073892604]
-modulate = Color(0.6706895, 0.6706895, 0.6706895, 1)
+modulate = Color(0.36846328, 0.3909138, 0.43018863, 1)
 layout_mode = 2
 texture = ExtResource("1_g5n55")
 expand_mode = 3
@@ -133,4 +137,66 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
 text = "Options"
 
+[node name="Line2D" type="Line2D" parent="." unique_id=642225575]
+points = PackedVector2Array(128, 153, 128, 275, 246, 275, 128, 275, 128, 420, 247, 420)
+default_color = Color(0.21960784, 0.23529412, 0.2627451, 1)
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=1029737162]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = -127.0
+offset_right = 503.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1tal6")
+
+[node name="MasterPanel" type="Panel" parent="OptionsPanel" unique_id=83824305]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 61.0
+offset_right = 369.0
+offset_bottom = 101.0
+
+[node name="MasterLabel" type="Label" parent="OptionsPanel/MasterPanel" unique_id=1495226713]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49100003
+anchor_top = -0.56200004
+anchor_right = 0.49100003
+anchor_bottom = -0.56200004
+offset_left = -117.647
+offset_top = -22.519999
+offset_right = 117.353
+offset_bottom = 22.480001
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+
+[node name="Master" type="HSlider" parent="OptionsPanel/MasterPanel" unique_id=555495392]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.52500004
+anchor_right = 0.50200003
+anchor_bottom = 0.52500004
+offset_left = -150.13402
+offset_top = -8.000002
+offset_right = 149.86598
+offset_bottom = 7.999998
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 11
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=323984362]
+stream = ExtResource("5_whw48")
+bus = &"Music"
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="value_changed" from="OptionsPanel/MasterPanel/Master" to="." method="_on_master_value_changed"]
