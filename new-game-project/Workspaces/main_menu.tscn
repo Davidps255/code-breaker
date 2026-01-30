@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://dv3gnqsc63446"]
+
+[ext_resource type="Texture2D" uid="uid://dh48jm5lfyihf" path="res://Assets/UI/dropdown.png" id="1_g5n55"]
+[ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/main_menu.gd" id="1_iq3f8"]
+[ext_resource type="PackedScene" uid="uid://cju2xotny3c5u" path="res://Workspaces/Kai.tscn" id="2_1tal6"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iq3f8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s2xg"]
+bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j10ko"]
+bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wte75"]
+bg_color = Color(0.21568628, 0.30980393, 0.4, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmrb6"]
+bg_color = Color(0.16470589, 0.21176471, 0.27058825, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[node name="Main Menu" type="Control" unique_id=1513136603]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iq3f8")
+start_scene = ExtResource("2_1tal6")
+
+[node name="BackgroundPanel" type="Panel" parent="." unique_id=1114812554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0s2xg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=155335776]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46400002
+anchor_top = 0.177
+anchor_right = 0.46400002
+anchor_bottom = 0.177
+offset_left = -494.528
+offset_top = -68.696
+offset_right = 493.472
+offset_bottom = 68.304
+theme_override_constants/separation = 20
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1293309186]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 40
+
+[node name="DropDown" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=2073892604]
+modulate = Color(0.6706895, 0.6706895, 0.6706895, 1)
+layout_mode = 2
+texture = ExtResource("1_g5n55")
+expand_mode = 3
+
+[node name="GameIcon" type="TextureRect" parent="HBoxContainer" unique_id=1039424238]
+layout_mode = 2
+texture = ExtResource("2_iq3f8")
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer" unique_id=1417340356]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Code Breaker"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2113779661]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.365
+anchor_top = 0.532
+anchor_right = 0.365
+anchor_bottom = 0.532
+offset_left = -171.48001
+offset_top = -122.73599
+offset_right = 171.51999
+offset_bottom = 123.26401
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+metadata/_edit_group_ = true
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1040825910]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=144045279]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
+text = "Options"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
