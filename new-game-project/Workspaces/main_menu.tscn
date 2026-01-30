@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/main_menu.gd" id="1_iq3f8"]
 [ext_resource type="PackedScene" uid="uid://cju2xotny3c5u" path="res://Workspaces/Kai.tscn" id="2_1tal6"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iq3f8"]
-[ext_resource type="AudioStream" uid="uid://cksm4kcu8l4xn" path="res://Assets/level2.mp3" id="5_whw48"]
+[ext_resource type="AudioStream" uid="uid://cksm4kcu8l4xn" path="res://Assets/Audio/level2.mp3" id="5_whw48"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s2xg"]
 bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
@@ -97,6 +97,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 96
 text = "Code Breaker"
 
+[node name="Line2D" type="Line2D" parent="." unique_id=642225575]
+points = PackedVector2Array(128, 160, 128, 275, 246, 275, 128, 275, 128, 420, 247, 420)
+width = 6.0
+default_color = Color(0.21960784, 0.23529412, 0.2627451, 1)
+joint_mode = 2
+begin_cap_mode = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2113779661]
 layout_mode = 1
 anchors_preset = -1
@@ -136,10 +143,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
 text = "Options"
-
-[node name="Line2D" type="Line2D" parent="." unique_id=642225575]
-points = PackedVector2Array(128, 153, 128, 275, 246, 275, 128, 275, 128, 420, 247, 420)
-default_color = Color(0.21960784, 0.23529412, 0.2627451, 1)
 
 [node name="OptionsPanel" type="Panel" parent="." unique_id=1029737162]
 layout_mode = 1
