@@ -17,13 +17,13 @@ func _ready() -> void:
 		button.pressed.connect(_on_button_pressed)
 
 
-func _on_button_pressed(_hi=0) -> void:
+func _on_button_pressed() -> void:
 	$ButtonSFX.play()
 
 
 func _on_start_button_pressed() -> void:
 	TransitionScreen.transition()
-	fade_volume(1)
+	fade_volume(2)
 	await TransitionScreen.transition_finished
 	get_tree().change_scene_to_packed(start_scene)
 
@@ -38,7 +38,7 @@ func _on_options_button_pressed() -> void:
 	if $OptionsPanel.position.x < 1150.0:
 		tween.tween_property($OptionsPanel,"position", Vector2(1160, $OptionsPanel.position.y), 0.5)
 	else:
-		tween.tween_property($OptionsPanel, "position", Vector2(663, $OptionsPanel.position.y), 0.5)
+		tween.tween_property($OptionsPanel, "position", Vector2(660, $OptionsPanel.position.y), 0.5)
 
 
 func _on_master_value_changed(value: float) -> void:
@@ -59,3 +59,7 @@ func _on_quit_button_pressed() -> void:
 
 func _on_music_finished() -> void:
 	$Music.play()
+
+
+func _on_mouse_slider_value_changed(value: float) -> void:
+	GameManager.set_mouse_sensitivity((value + 0.1) / 0.5 * 0.01)

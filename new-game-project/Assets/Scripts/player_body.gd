@@ -2,9 +2,9 @@ extends CharacterBody3D
 
 const SPEED: float = 5.0
 const JUMP_VELOCITY: float = 4.5
-const MOUSE_SENSITIVITY: float = 0.01
 const MIN_CAMERA_ROTATION: int = -30
 const MAX_CAMERA_ROTATION: int = 60
+var MOUSE_SENSITIVITY: float = GameManager.mouse_sensitivty
 @export var neck: Node3D
 @export var camera: Camera3D
 

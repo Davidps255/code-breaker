@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cju2xotny3c5u" path="res://Workspaces/Kai.tscn" id="2_1tal6"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iq3f8"]
 [ext_resource type="FontFile" uid="uid://dl38o7c5ra4ce" path="res://Assets/Fonts/Consolas-Regular.ttf" id="5_dkfhe"]
-[ext_resource type="AudioStream" uid="uid://bfucoxidompou" path="res://menu_music.res" id="5_whw48"]
+[ext_resource type="AudioStream" uid="uid://bfucoxidompou" path="res://Assets/Audio/menu_music.res" id="5_whw48"]
 [ext_resource type="AudioStream" uid="uid://8nnigmd824y" path="res://Assets/Audio/jiafei-scream.mp3" id="6_oqwj1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s2xg"]
@@ -13,59 +13,67 @@ bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j10ko"]
 bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.2856, 0.30554667, 0.34, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 corner_detail = 6
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wte75"]
 bg_color = Color(0.21568628, 0.30980393, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.28627452, 0.30588236, 0.34117648, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 corner_detail = 6
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmrb6"]
 bg_color = Color(0.16470589, 0.21176471, 0.27058825, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.28627452, 0.30588236, 0.34117648, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 corner_detail = 6
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tal6"]
 bg_color = Color(0.11372549, 0.13333334, 0.16078432, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.28627452, 0.30588236, 0.34117648, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 5
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkfhe"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbe8i"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jry6"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vfcgc"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7yca"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbe8i"]
+bg_color = Color(0.0504, 0.05424, 0.06, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="Theme" id="Theme_g3r6r"]
-VScrollBar/styles/grabber = SubResource("StyleBoxTexture_dkfhe")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_cbe8i")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_6jry6")
-VScrollBar/styles/scroll = SubResource("StyleBoxTexture_vfcgc")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_k7yca")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkfhe"]
 bg_color = Color(0.105882354, 0.11372549, 0.1254902, 1)
@@ -131,8 +139,10 @@ texture = ExtResource("2_iq3f8")
 [node name="TitleLabel" type="Label" parent="HBoxContainer" unique_id=1417340356]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_dkfhe")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 100
 text = "Code Breaker"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Line2D" type="Line2D" parent="." unique_id=642225575]
 points = PackedVector2Array(128, 160, 128, 260, 246, 260, 128, 260, 128, 410, 247, 410, 128, 410, 128, 560, 247, 560)
@@ -210,12 +220,33 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1tal6")
 metadata/_edit_group_ = true
 
+[node name="Title" type="Panel" parent="OptionsPanel" unique_id=833030395]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 17.0
+offset_right = 394.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cbe8i")
+metadata/_edit_group_ = true
+
+[node name="TitleLabel" type="Label" parent="OptionsPanel/Title" unique_id=948179482]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ScrollContainer" type="ScrollContainer" parent="OptionsPanel" unique_id=731635521]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 32.0
+offset_top = 84.0
 offset_right = 394.0
-offset_bottom = 375.0
+offset_bottom = 382.0
 theme = SubResource("Theme_g3r6r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel/ScrollContainer" unique_id=1512954128]
@@ -317,13 +348,13 @@ value = 1.0
 scrollable = false
 tick_count = 11
 
-[node name="SFXPanel2" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=1324431827]
-custom_minimum_size = Vector2(0, 80)
+[node name="ControlsPanel" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=1324431827]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cbe8i")
 metadata/_edit_group_ = true
 
-[node name="MusicLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel2" unique_id=1768090318]
+[node name="KeybindsLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/ControlsPanel" unique_id=1768090318]
 layout_mode = 0
 offset_left = -2.0
 offset_top = 2.0
@@ -331,11 +362,30 @@ offset_right = 370.0
 offset_bottom = 49.0
 theme_override_fonts/font = ExtResource("5_dkfhe")
 theme_override_font_sizes/font_size = 32
-text = "temp1"
+text = "Control Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MousePanel" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=759229324]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
+metadata/_edit_group_ = true
+
+[node name="MouseLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/MousePanel" unique_id=463614011]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_font_sizes/font_size = 32
+text = "Mouse Sensitivity"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFXSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel2" unique_id=349990642 groups=["Slider"]]
+[node name="MouseSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/MousePanel" unique_id=1084490879 groups=["Slider"]]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 42.0
@@ -344,17 +394,17 @@ offset_bottom = 69.0
 mouse_filter = 1
 max_value = 1.0
 step = 0.1
-value = 1.0
+value = 0.5
 scrollable = false
 tick_count = 11
 
-[node name="SFXPanel3" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=759229324]
+[node name="KeybindPanel" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=406150604]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
 metadata/_edit_group_ = true
 
-[node name="MusicLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel3" unique_id=463614011]
+[node name="KeybindLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/KeybindPanel" unique_id=835190499]
 layout_mode = 0
 offset_left = -2.0
 offset_top = 2.0
@@ -362,22 +412,9 @@ offset_right = 370.0
 offset_bottom = 49.0
 theme_override_fonts/font = ExtResource("5_dkfhe")
 theme_override_font_sizes/font_size = 32
-text = "temp2"
+text = "temp"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SFXSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel3" unique_id=1084490879 groups=["Slider"]]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 42.0
-offset_right = 353.0
-offset_bottom = 69.0
-mouse_filter = 1
-max_value = 1.0
-step = 0.1
-value = 1.0
-scrollable = false
-tick_count = 11
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=323984362]
 stream = ExtResource("5_whw48")
@@ -394,4 +431,5 @@ bus = &"SFX"
 [connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MasterPanel/MasterSlider" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MusicPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MousePanel/MouseSlider" to="." method="_on_mouse_slider_value_changed"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
