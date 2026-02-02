@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/main_menu.gd" id="1_iq3f8"]
 [ext_resource type="PackedScene" uid="uid://cju2xotny3c5u" path="res://Workspaces/Kai.tscn" id="2_1tal6"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iq3f8"]
-[ext_resource type="AudioStream" uid="uid://cksm4kcu8l4xn" path="res://Assets/Audio/level2.mp3" id="5_whw48"]
+[ext_resource type="FontFile" uid="uid://dl38o7c5ra4ce" path="res://Assets/Fonts/Consolas-Regular.ttf" id="5_dkfhe"]
+[ext_resource type="AudioStream" uid="uid://bfucoxidompou" path="res://menu_music.res" id="5_whw48"]
+[ext_resource type="AudioStream" uid="uid://8nnigmd824y" path="res://Assets/Audio/jiafei-scream.mp3" id="6_oqwj1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s2xg"]
 bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
@@ -41,6 +43,40 @@ shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tal6"]
 bg_color = Color(0.11372549, 0.13333334, 0.16078432, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkfhe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbe8i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jry6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vfcgc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7yca"]
+
+[sub_resource type="Theme" id="Theme_g3r6r"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_dkfhe")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_cbe8i")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_6jry6")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_vfcgc")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_k7yca")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkfhe"]
+bg_color = Color(0.105882354, 0.11372549, 0.1254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Main Menu" type="Control" unique_id=1513136603]
 layout_mode = 3
@@ -94,11 +130,12 @@ texture = ExtResource("2_iq3f8")
 
 [node name="TitleLabel" type="Label" parent="HBoxContainer" unique_id=1417340356]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dkfhe")
 theme_override_font_sizes/font_size = 96
 text = "Code Breaker"
 
 [node name="Line2D" type="Line2D" parent="." unique_id=642225575]
-points = PackedVector2Array(128, 160, 128, 275, 246, 275, 128, 275, 128, 420, 247, 420)
+points = PackedVector2Array(128, 160, 128, 260, 246, 260, 128, 260, 128, 410, 247, 410, 128, 410, 128, 560, 247, 560)
 width = 6.0
 default_color = Color(0.21960784, 0.23529412, 0.2627451, 1)
 joint_mode = 2
@@ -112,94 +149,251 @@ anchor_top = 0.532
 anchor_right = 0.365
 anchor_bottom = 0.532
 offset_left = -171.48001
-offset_top = -122.73599
+offset_top = -139.736
 offset_right = 171.51999
-offset_bottom = 123.26401
-grow_horizontal = 2
-grow_vertical = 2
+offset_bottom = 268.264
 theme_override_constants/separation = 40
 metadata/_edit_group_ = true
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1040825910]
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1040825910 groups=["Button"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_dkfhe")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
 text = "Start Game"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=144045279]
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=144045279 groups=["Button"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_dkfhe")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
 text = "Options"
 
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1718137233 groups=["Button"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
+text = "Quit"
+
 [node name="OptionsPanel" type="Panel" parent="." unique_id=1029737162]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 87.0
-offset_top = -127.0
-offset_right = 503.0
-offset_bottom = 245.0
+anchors_preset = -1
+anchor_left = 0.75600004
+anchor_top = 0.591
+anchor_right = 0.75600004
+anchor_bottom = 0.591
+offset_left = 289.08795
+offset_top = -177.96802
+offset_right = 705.08795
+offset_bottom = 230.03198
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1tal6")
+metadata/_edit_group_ = true
 
-[node name="MasterPanel" type="Panel" parent="OptionsPanel" unique_id=83824305]
+[node name="ScrollContainer" type="ScrollContainer" parent="OptionsPanel" unique_id=731635521]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 61.0
-offset_right = 369.0
-offset_bottom = 101.0
+offset_left = 22.0
+offset_top = 32.0
+offset_right = 394.0
+offset_bottom = 375.0
+theme = SubResource("Theme_g3r6r")
 
-[node name="MasterLabel" type="Label" parent="OptionsPanel/MasterPanel" unique_id=1495226713]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.49100003
-anchor_top = -0.56200004
-anchor_right = 0.49100003
-anchor_bottom = -0.56200004
-offset_left = -117.647
-offset_top = -22.519999
-offset_right = 117.353
-offset_bottom = 22.480001
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel/ScrollContainer" unique_id=1512954128]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="MasterPanel" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=83824305]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
+metadata/_edit_group_ = true
+
+[node name="MasterLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/MasterPanel" unique_id=1495226713]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_dkfhe")
 theme_override_font_sizes/font_size = 32
 text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Master" type="HSlider" parent="OptionsPanel/MasterPanel" unique_id=555495392]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.50200003
-anchor_top = 0.52500004
-anchor_right = 0.50200003
-anchor_bottom = 0.52500004
-offset_left = -150.13402
-offset_top = -8.000002
-offset_right = 149.86598
-offset_bottom = 7.999998
+[node name="MasterSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/MasterPanel" unique_id=555495392 groups=["Slider"]]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 353.0
+offset_bottom = 69.0
+mouse_filter = 1
 max_value = 1.0
 step = 0.1
 value = 1.0
+scrollable = false
 tick_count = 11
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=323984362]
+[node name="MusicPanel" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=708164337]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
+metadata/_edit_group_ = true
+
+[node name="MusicLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/MusicPanel" unique_id=2121303093]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_font_sizes/font_size = 32
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/MusicPanel" unique_id=999998370 groups=["Slider"]]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 353.0
+offset_bottom = 69.0
+mouse_filter = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
+scrollable = false
+tick_count = 11
+
+[node name="SFXPanel" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=780738331]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
+metadata/_edit_group_ = true
+
+[node name="SFXLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel" unique_id=819376154]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_font_sizes/font_size = 32
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel" unique_id=1983681360 groups=["Slider"]]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 353.0
+offset_bottom = 69.0
+mouse_filter = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
+scrollable = false
+tick_count = 11
+
+[node name="SFXPanel2" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=1324431827]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
+metadata/_edit_group_ = true
+
+[node name="MusicLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel2" unique_id=1768090318]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_font_sizes/font_size = 32
+text = "temp1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel2" unique_id=349990642 groups=["Slider"]]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 353.0
+offset_bottom = 69.0
+mouse_filter = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
+scrollable = false
+tick_count = 11
+
+[node name="SFXPanel3" type="Panel" parent="OptionsPanel/ScrollContainer/VBoxContainer" unique_id=759229324]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkfhe")
+metadata/_edit_group_ = true
+
+[node name="MusicLabel" type="Label" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel3" unique_id=463614011]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_font_sizes/font_size = 32
+text = "temp2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel3" unique_id=1084490879 groups=["Slider"]]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 353.0
+offset_bottom = 69.0
+mouse_filter = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
+scrollable = false
+tick_count = 11
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=323984362]
 stream = ExtResource("5_whw48")
 bus = &"Music"
 
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="." unique_id=1820488365]
+stream = ExtResource("6_oqwj1")
+volume_db = -20.0
+bus = &"SFX"
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="value_changed" from="OptionsPanel/MasterPanel/Master" to="." method="_on_master_value_changed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MasterPanel/MasterSlider" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MusicPanel/MusicSlider" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel/SFXSlider" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel2/SFXSlider" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel3/SFXSlider" to="." method="_on_master_value_changed"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
