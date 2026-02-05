@@ -3,14 +3,12 @@ class_name CommandLine
 
 @export var line_edit: LineEdit 
 
-var function_1: Array[String]
-var function_2: Array[String]
-var function_3: Array[String]
+var function_array: Array[String]
 
-# index in function list/array
+# index in function array 
 var index: int = 0
 
-
+# OBJECT / ACTION @ ARGUMENT
 func received_command(input: String):
 	# general formatting of input
 	input = input.remove_chars(" ") #removes spaces
@@ -19,7 +17,7 @@ func received_command(input: String):
 	if (input == "end"):
 		index = 0
 	elif (input.begins_with("function") or index > 0):
-		write_func(input)
+		write_function(input)
 	elif input.contains("/") and input.contains("@"):
 		parse_command(input)
 	else:
@@ -28,12 +26,12 @@ func received_command(input: String):
 	line_edit.text = "" #clears command after execution
 
 
-func write_func(input: String):
+func write_function(input: String):
 	if (index == 0):
 		# get the name of created function
-		function_1[index] = input.substr(8)
+		function_array[index] = input.substr(8)
 	else:
-		function_1[index] = input
+		function_array[index] = input
 
 
 func parse_command(input: String):
@@ -45,8 +43,13 @@ func parse_command(input: String):
 	var action = input.substr(
 		slash + 1, 
 		at - object.length() - 1)
-	var location = input.substr(at + 1)
+	var argument = input.substr(at + 1)
 	
 	print(object)
 	print(action)
-	print(location)
+	print(argument)
+
+
+# actions
+	#north, south, east, west (movment, takes numerical argument)
+	#
