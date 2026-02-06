@@ -7,8 +7,12 @@ const MAX_CAMERA_ROTATION: int = 60
 var MOUSE_SENSITIVITY: float = GameManager.mouse_sensitivty
 @export var neck: Node3D
 @export var camera: Camera3D
+@export var documentation_ui: Control
+
+var documentation_open: bool = false
 
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -16,7 +20,14 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+		
+	if Input.is_action_just_pressed("open_documentation"):
+		documentation_ui.visible=!documentation_ui.visible
+		documentation_open=!documentation_open	
+		if documentation_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
@@ -31,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not documentation_open:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
