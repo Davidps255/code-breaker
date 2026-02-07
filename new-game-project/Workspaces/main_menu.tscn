@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dv3gnqsc63446"]
+[gd_scene format=3 uid="uid://cpk5cjdxsvqup"]
 
 [ext_resource type="Texture2D" uid="uid://dh48jm5lfyihf" path="res://Assets/UI/dropdown.png" id="1_g5n55"]
 [ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/main_menu.gd" id="1_iq3f8"]
@@ -150,6 +150,7 @@ width = 6.0
 default_color = Color(0.21960784, 0.23529412, 0.2627451, 1)
 joint_mode = 2
 begin_cap_mode = 2
+end_cap_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2113779661]
 layout_mode = 1

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="code-breaker"
-run/main_scene="uid://dv3gnqsc63446"
+run/main_scene="uid://cpk5cjdxsvqup"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,8 +25,8 @@ buses/default_bus_layout="uid://cg78sxeh3hdbr"
 
 [autoload]
 
-SoundManager="*uid://b717ipdt1c28r"
 TransitionScreen="*uid://c265iwx78kw7k"
+SoundManager="*uid://ca4nsnuu6ob0q"
 GameManager="*uid://b4ao4y03l1aw8"
 
 [display]
