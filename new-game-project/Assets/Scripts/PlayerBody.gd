@@ -4,12 +4,14 @@ const SPEED: float = 5.0
 const JUMP_VELOCITY: float = 4.5
 const MIN_CAMERA_ROTATION: int = -30
 const MAX_CAMERA_ROTATION: int = 60
-var MOUSE_SENSITIVITY: float = GameManager.mouse_sensitivty
+var mouse_sensitvity: float = GameSettings.mouse_sensitivty
 @export var neck: Node3D
 @export var camera: Camera3D
-@export var documentation_ui: Control
 
-var documentation_open: bool = false
+
+func _ready() -> void:
+	GameSettings.sensitivity_changed.connect(_on_game_settings_sensitivity_changed)
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -20,12 +22,6 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
-	if Input.is_action_just_pressed("open_documentation"):
-		documentation_ui.visible=!documentation_ui.visible
-		documentation_open=!documentation_open	
-		if documentation_open:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	
 	# Get the input direction and handle the movement/deceleration.
@@ -41,14 +37,14 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and not documentation_open:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	elif event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
-			camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
+			neck.rotate_y(-event.relative.x * mouse_sensitvity)
+			camera.rotate_x(-event.relative.y * mouse_sensitvity)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(MIN_CAMERA_ROTATION), deg_to_rad(MAX_CAMERA_ROTATION))
+
+
+func _on_game_settings_sensitivity_changed() -> void:
+	mouse_sensitvity = GameSettings.mouse_sensitivty

@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cjs2rm2pkcodj"]
+
+[ext_resource type="Script" uid="uid://kra307kfo7ta" path="res://Assets/Scripts/DocumentationUI.gd" id="1_l4065"]
+[ext_resource type="Texture2D" uid="uid://dcy64kuh0csjo" path="res://Assets/Temporary Documentation Command Images/Screenshot 2026-01-31 154127.png" id="2_fylsk"]
+
+[node name="DocumentationUI" type="Control" unique_id=1379384961 node_paths=PackedStringArray("panel_texture_rect")]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_l4065")
+panel_texture_rect = NodePath("Panel/HBoxContainer/Panel/TextureRect")
+
+[node name="Panel" type="Panel" parent="." unique_id=1211791191]
+layout_mode = 0
+offset_left = 276.0
+offset_right = 876.0
+offset_bottom = 600.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1552070223]
+layout_direction = 2
+layout_mode = 0
+offset_left = 30.0
+offset_top = -1.0
+offset_right = 530.0
+offset_bottom = 599.0
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/HBoxContainer" unique_id=1285968244]
+custom_minimum_size = Vector2(110, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/ScrollContainer" unique_id=181708002]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2010054048]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 1"
+
+[node name="Button2" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1140054533]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 2"
+
+[node name="Button3" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=44083233]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 3"
+
+[node name="Button4" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1049119238]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 4"
+
+[node name="Button5" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1853985955]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 5"
+
+[node name="Button6" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2084126917]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 6"
+
+[node name="Button7" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2003261840]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 7"
+
+[node name="Button8" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1421572923]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 8"
+
+[node name="Button9" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2092263148]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 9"
+
+[node name="Button10" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1669607180]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 10"
+
+[node name="Button11" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=370781019]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 11"
+
+[node name="Button12" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=479962147]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 12"
+
+[node name="Button13" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=368487018]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 13"
+
+[node name="Button14" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=734142027]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 14"
+
+[node name="Button15" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=942281610]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 15"
+
+[node name="Button16" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1296037472]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 16"
+
+[node name="Button17" type="Button" parent="Panel/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=973527312]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "command 17"
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer" unique_id=603930050]
+custom_minimum_size = Vector2(410, 600)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Panel" unique_id=1259528507]
+layout_mode = 0
+offset_right = 469.0
+offset_bottom = 679.0
+scale = Vector2(0.884, 0.884)
+texture = ExtResource("2_fylsk")
+
+[connection signal="pressed" from="Panel/HBoxContainer/ScrollContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/ScrollContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/ScrollContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/ScrollContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

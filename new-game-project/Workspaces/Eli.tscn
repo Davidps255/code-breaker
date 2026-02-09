@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpk8ug86agfcy"]
 
-[ext_resource type="Script" uid="uid://clbwjn4vp184c" path="res://Assets/Scripts/command_line.gd" id="1_nq3dx"]
+[ext_resource type="Script" uid="uid://clbwjn4vp184c" path="res://Assets/Scripts/CommandLine.gd" id="1_nq3dx"]
 
 [node name="Eli" type="Node3D" unique_id=1779811429]
 

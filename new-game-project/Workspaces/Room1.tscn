@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bnwrokdrsr5t0"]
+
+[ext_resource type="Script" uid="uid://b163v786fbp4g" path="res://Assets/Scripts/UIManager.gd" id="1_0ayix"]
+[ext_resource type="PackedScene" uid="uid://c6lcr42utnput" path="res://Workspaces/Player.tscn" id="1_348c1"]
+[ext_resource type="PackedScene" uid="uid://cjs2rm2pkcodj" path="res://Workspaces/DocumentationUI.tscn" id="2_a6r8a"]
+[ext_resource type="PackedScene" uid="uid://dk3avc27r5esr" path="res://Workspaces/PauseMenu.tscn" id="3_a6r8a"]
+
+[node name="Room 1" type="Node3D" unique_id=1877062512]
+
+[node name="Walls" type="Node" parent="." unique_id=1163009596]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls" unique_id=598705516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8621826, 0, -0.22061157)
+use_collision = true
+size = Vector3(26, 1, 26)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Walls" unique_id=381672004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8621826, 11, -0.22061157)
+use_collision = true
+size = Vector3(26, 1, 26)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Walls" unique_id=767771594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8621826, 5.5, 12.279388)
+use_collision = true
+size = Vector3(26, 10, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Walls" unique_id=1834043325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8621826, 5.5, -12.720612)
+use_collision = true
+size = Vector3(26, 10, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Walls" unique_id=558038208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.637817, 5.5, -0.22061157)
+use_collision = true
+size = Vector3(1, 10, 24)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Walls" unique_id=1284924317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.362183, 5.5, -0.22061157)
+use_collision = true
+size = Vector3(1, 10, 24)
+
+[node name="Player" parent="." unique_id=368349436 instance=ExtResource("1_348c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10306573, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1888594225]
+transform = Transform3D(1, 0, 0, 0, 0.8609818, 0.50863576, 0, -0.50863576, 0.8609818, 0, 6.781724, 12.971146)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1191277533]
+
+[node name="UI Manager" type="Control" parent="UI" unique_id=128457610 node_paths=PackedStringArray("documentation_ui", "pause_menu")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0ayix")
+documentation_ui = NodePath("DocumentationUI")
+pause_menu = NodePath("Pause Menu")
+
+[node name="DocumentationUI" parent="UI/UI Manager" unique_id=1379384961 instance=ExtResource("2_a6r8a")]
+layout_mode = 0
+offset_top = 25.0
+offset_bottom = 25.0
+
+[node name="Pause Menu" parent="UI/UI Manager" unique_id=376374084 instance=ExtResource("3_a6r8a")]
+layout_mode = 1
+offset_right = 1112.0
+offset_bottom = 608.0

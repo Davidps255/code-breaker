@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cju2xotny3c5u"]
 
-[ext_resource type="Script" uid="uid://ce3iogoj0bmus" path="res://Assets/Scripts/player_body.gd" id="1_7hkgt"]
+[ext_resource type="Script" uid="uid://ce3iogoj0bmus" path="res://Assets/Scripts/PlayerBody.gd" id="1_7hkgt"]
 [ext_resource type="Texture2D" uid="uid://dcy64kuh0csjo" path="res://Assets/Temporary Documentation Command Images/Screenshot 2026-01-31 154127.png" id="2_jgxto"]
-[ext_resource type="Script" uid="uid://kra307kfo7ta" path="res://Assets/Scripts/ui.gd" id="2_vtc10"]
+[ext_resource type="Script" uid="uid://kra307kfo7ta" path="res://Assets/Scripts/DocumentationUI.gd" id="2_vtc10"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o4uuu"]
 
