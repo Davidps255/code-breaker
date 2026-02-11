@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ce3iogoj0bmus" path="res://Assets/Scripts/player_body.gd" id="1_7hkgt"]
 [ext_resource type="Texture2D" uid="uid://dcy64kuh0csjo" path="res://Assets/Temporary Documentation Command Images/Screenshot 2026-01-31 154127.png" id="2_jgxto"]
 [ext_resource type="Script" uid="uid://kra307kfo7ta" path="res://Assets/Scripts/ui.gd" id="2_vtc10"]
+[ext_resource type="MeshLibrary" uid="uid://bjyvtyttp58ke" path="res://Assets/MeshLibrary/GridMap.meshlib" id="4_omx4k"]
+[ext_resource type="Script" uid="uid://bweuqqk2mmc0s" path="res://Assets/Scripts/miki.gd" id="5_pcieh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o4uuu"]
 
@@ -11,30 +13,25 @@ height = 2.0375977
 
 [node name="Kai" type="Node3D" unique_id=1877062512]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=598705516]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8621826, 0, -0.22061157)
-use_collision = true
-size = Vector3(17.802979, 1, 12.968811)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=458031514 node_paths=PackedStringArray("neck", "camera", "documentation_ui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10306573, 0)
+[node name="Player" type="CharacterBody3D" parent="." unique_id=458031514 node_paths=PackedStringArray("neck", "camera", "documentation_ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.978837, 0)
 script = ExtResource("1_7hkgt")
 neck = NodePath("Neck")
 camera = NodePath("Neck/Camera3D")
 documentation_ui = NodePath("../DocumentationUI")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1202843615]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1202843615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4465435, 0)
 mesh = SubResource("CapsuleMesh_o4uuu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1253380853]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1253380853]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4403542, 0)
 shape = SubResource("CapsuleShape3D_7hkgt")
 
-[node name="Neck" type="Node3D" parent="CharacterBody3D" unique_id=1275281443]
+[node name="Neck" type="Node3D" parent="Player" unique_id=1275281443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1727152, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck" unique_id=1124225803]
+[node name="Camera3D" type="Camera3D" parent="Player/Neck" unique_id=1124225803]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1888594225]
 transform = Transform3D(1, 0, 0, 0, 0.8609818, 0.50863576, 0, -0.50863576, 0.8609818, 0, 6.781724, 12.971146)
@@ -166,6 +163,29 @@ offset_right = 469.0
 offset_bottom = 679.0
 scale = Vector2(0.884, 0.884)
 texture = ExtResource("2_jgxto")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=167780599]
+mesh_library = ExtResource("4_omx4k")
+cell_size = Vector3(1, 1, 1)
+bake_navigation = true
+data = {
+"cells": PackedInt32Array(65535, 0, 655361, 0, 0, 655361, 1, 0, 655361, 2, 0, 655361, 3, 0, 655361, 3, 65535, 655361, 2, 65535, 655361, 1, 65535, 655361, 0, 65535, 655361, 65535, 1, 655361, 65534, 1, 655361, 65534, 2, 655361, 65535, 2, 655361, 0, 2, 655361, 1, 2, 655361, 2, 2, 655361, 2, 1, 655361, 65535, 65535, 655361, 1, 1, 655361, 0, 1, 655361, 65533, 0, 655361, 65533, 65535, 655361, 65534, 65534, 655361, 65534, 65533, 655361, 65534, 65535, 655361, 65534, 0, 655361, 65534, 65532, 655361, 65533, 65534, 655361, 65533, 1, 655361, 65533, 2, 655361, 0, 65534, 655361, 0, 65533, 655361, 0, 65532, 655361, 65535, 65531, 655361, 65534, 65531, 655361, 3, 2, 655361, 3, 1, 655361, 3, 65534, 655361, 2, 65534, 655361, 1, 65534, 655361, 4, 65533, 655361, 4, 65532, 655361, 5, 65531, 655361, 5, 65530, 655361, 5, 65529, 655361, 4, 65529, 655361, 3, 65530, 655361, 2, 65530, 655361, 1, 65531, 655361, 65535, 65533, 655361, 65534, 3, 655361, 65535, 3, 655361, 0, 3, 655361, 1, 3, 655361, 2, 3, 655361, 1, 65533, 655361, 1, 65532, 655361, 1, 65530, 655361, 1, 65529, 655361, 1, 65528, 655361, 1, 65527, 655361, 1, 65526, 655361, 1, 65525, 655361, 1, 65524, 655361, 1, 65523, 655361, 0, 65524, 655361, 65535, 65525, 655361, 65535, 65526, 655361, 65534, 65527, 655361, 65534, 65528, 655361, 65534, 65529, 655361, 65534, 65530, 655361, 2, 65533, 655361, 2, 65532, 655361, 2, 65531, 655361, 0, 65530, 655361, 0, 65531, 655361, 65535, 65534, 655361, 0, 65529, 655361, 65535, 65530, 655361, 65535, 65532, 655361, 65532, 0, 655361, 65532, 1, 655361, 65532, 2, 655361, 65532, 3, 655361, 65533, 3, 655361, 65535, 4, 655361, 0, 4, 655361, 0, 5, 655361, 1, 5, 655361, 65534, 4, 655361, 65533, 4, 655361, 1, 4, 655361, 2, 4, 655361)
+}
+
+[node name="Miki" type="CharacterBody3D" parent="." unique_id=1406810247 node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7482008, 2.7143855)
+script = ExtResource("5_pcieh")
+player = NodePath("../Player")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Miki" unique_id=1056368940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4465435, 0)
+mesh = SubResource("CapsuleMesh_o4uuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Miki" unique_id=1601180824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4403542, 0)
+shape = SubResource("CapsuleShape3D_7hkgt")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Miki" unique_id=874650172]
 
 [connection signal="pressed" from="DocumentationUI/Panel/HBoxContainer/ScrollContainer/VBoxContainer/Button1" to="DocumentationUI" method="_on_button_1_pressed"]
 [connection signal="pressed" from="DocumentationUI/Panel/HBoxContainer/ScrollContainer/VBoxContainer/Button2" to="DocumentationUI" method="_on_button_2_pressed"]
