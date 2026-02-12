@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://vw8ujfev8puu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r17yk"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_r17yk"]
+vertices = PackedVector3Array(-0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, 0.5, 1, -0.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_radius = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xvhyu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xvhyu"]
+
+[node name="MeshLibrary" type="Node3D" unique_id=2060891936]
+
+[node name="BasicFloorTile2" type="MeshInstance3D" parent="." unique_id=22152510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1379929, 0, 0)
+mesh = SubResource("BoxMesh_r17yk")
+skeleton = NodePath("")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="BasicFloorTile2" unique_id=165138051]
+navigation_mesh = SubResource("NavigationMesh_r17yk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BasicFloorTile2/NavigationRegion3D" unique_id=1979075686]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BasicFloorTile2/NavigationRegion3D/StaticBody3D" unique_id=264002945]
+shape = SubResource("BoxShape3D_xvhyu")
+
+[node name="BasicFloorTile" type="MeshInstance3D" parent="." unique_id=1210023232]
+mesh = SubResource("BoxMesh_xvhyu")
+skeleton = NodePath("")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="BasicFloorTile" unique_id=1970502471]
+navigation_mesh = SubResource("NavigationMesh_r17yk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BasicFloorTile/NavigationRegion3D" unique_id=1614469123]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BasicFloorTile/NavigationRegion3D/StaticBody3D" unique_id=1501413560]
+shape = SubResource("BoxShape3D_xvhyu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BasicFloorTile" unique_id=354904511]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BasicFloorTile/StaticBody3D" unique_id=489035899]
+shape = SubResource("BoxShape3D_xvhyu")
