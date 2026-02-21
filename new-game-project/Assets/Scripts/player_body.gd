@@ -10,6 +10,9 @@ var MOUSE_SENSITIVITY: float = GameManager.mouse_sensitivty
 @export var documentation_ui: Control
 
 var documentation_open: bool = false
+var interacting_with_miki: bool = false
+var player_tile_coordinates: Vector2 = Vector2(-9,-9)
+var is_player: bool = true
 
 func _physics_process(delta: float) -> void:
 	
