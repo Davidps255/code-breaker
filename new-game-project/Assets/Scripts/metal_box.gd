@@ -5,8 +5,10 @@ const SPEED: float = 5.0
 @export var script_type: String = "metal_box"
 @export var is_stationary: bool = true
 @export var is_movable: bool = true
-var tile_coordinates: Vector2 = Vector2(-9,-9)
-
+@export var tile_coordinates: Vector2 = Vector2(100,100)
+@export var is_printable: bool = true
+@export var is_template: bool = false
+@export var is_clone: bool = false
 
 
 func _physics_process(delta: float) -> void:

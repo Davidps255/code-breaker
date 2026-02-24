@@ -3,7 +3,16 @@ extends Node3D
 @export var x_length: int
 @export var y_length: int
 
-func _enter_tree() -> void:
+func _set_tiles() -> void:
+	print("SET TILES")
+	print("SET TILES")
+
+	print("SET TILES")
+	print("SET TILES")
+	print("SET TILES")
+	print("SET TILES")
+	print("SET TILES")
+
 	GlobalVariables.tile_list=[]
 	var y: int = 0
 	var x: int = 0

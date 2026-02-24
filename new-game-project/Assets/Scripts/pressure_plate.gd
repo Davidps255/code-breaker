@@ -5,6 +5,9 @@ extends Node3D
 @export var is_movable: bool = false
 @export var tile_coordinates: Vector2 = Vector2(-9,-9)
 @export var powered_object: String
+@export var is_printable: bool = false
+@export var is_template: bool = false
+@export var is_clone: bool = false
 
 var active: bool = true
 signal pressed()

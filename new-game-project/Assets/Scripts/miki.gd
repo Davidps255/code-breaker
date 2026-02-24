@@ -9,36 +9,37 @@ var is_interactable: bool = true
 var interactable_type: String = "miki"
 var interacting_with_player: bool = false
 var following_orders: bool = false
-var order_type: String = "movement"
+var order_type: String = "move"
 var cardinal_vectors: Array = [Vector2(-1,0), Vector2(1,0), Vector2(0,-1), Vector2(0,1)]
 const SPEED: float = 5.0
 
 var prop_to_move = null
 var target_prop = null
 var is_carrying_target: bool = false
+var is_in_hallway: bool = false
 
 var documentation_open: bool = false
 
 func find_target_destination(target):
 	tile_options=[]
 	var target_coordinates: Vector2 = target.tile_coordinates
+	#print(target.position)
 	for i in range(4):
-		var possible_x: int = target_coordinates[0] +cardinal_vectors[i][0]
+		var possible_x: int = target_coordinates[0] + cardinal_vectors[i][0]
 		var possible_y: int = target_coordinates[1] + cardinal_vectors[i][1]
-		if 0 < possible_x and possible_x < len(GlobalVariables.tile_list[0]):
-			if 0 < possible_y and possible_y < len(GlobalVariables.tile_list):
+		if 0 <= possible_x and possible_x < len(GlobalVariables.tile_list[0]):
+			if 0 <= possible_y and possible_y < len(GlobalVariables.tile_list):
 				tile_options.append(GlobalVariables.tile_list[possible_y][possible_x])
-
 	var closest_tile: NavigationRegion3D = null
 	for tile in tile_options:
 		if closest_tile==null:
 			closest_tile=tile
 		else:
-			if (position.distance_to(tile.position) < position.distance_to(closest_tile.position)):
+			if (position.distance_to(tile.global_position) < position.distance_to(closest_tile.global_position)):
 				closest_tile=tile
 	
 	if closest_tile!=null:
-		nav_agent.target_position=closest_tile.position
+		nav_agent.target_position=closest_tile.global_position
 	else:
 		print("MIKI COULD NOT FIND VIABLE PATHFIND TILE")
 
@@ -49,38 +50,58 @@ func move_to_target():
 	new_velocity.y=0;
 	
 	velocity=velocity.move_toward(new_velocity, 0.25)
+	#print("NEW VELOCITY: " + str(new_velocity))
+
 
 func _physics_process(delta: float) -> void:
+	if is_in_hallway:
+		#print("hallway movement")
+		nav_agent.target_position=player.global_position
+		following_orders = false
+		move_to_target()
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if not following_orders:
+		
+	if not following_orders and not is_in_hallway:
+		#print("NORMAL MOVEMENT")
 		find_target_destination(player)
 		move_to_target()
 		
-	if following_orders==true and order_type=="movement":
+	if following_orders==true and order_type=="move":
 		if is_carrying_target == false:
 			find_target_destination(prop_to_move)
 			move_to_target()
-			if (self.position.distance_to(prop_to_move.position) < 2.3):
+			if (self.position.distance_to(prop_to_move.global_position) < 2.3):
 				is_carrying_target = true
+				prop_to_move.is_template=false
 		if is_carrying_target == true:
-			prop_to_move.position = self.position + Vector3(0, 4, 0)
+			prop_to_move.global_position = self.position + Vector3(0, 4, 0)
 			find_target_destination(target_prop)
 			move_to_target()
-			if (self.position.distance_to(target_prop.position) < 2.3):
+			if (self.position.distance_to(target_prop.global_position) < 2.3):
 				is_carrying_target = false
 				following_orders=false
-				prop_to_move.position = target_prop.position + Vector3(0, 1, 0)
-				
+				if order_type=="move":
+					prop_to_move.global_position = target_prop.global_position + Vector3(0, 1, 0)
+					if target_prop.script_type=="printer":
+						target_prop.template=prop_to_move
+						prop_to_move.is_template=true
+						
 
+		
 	move_and_slide()
 	
-func interact(enter_or_exit: String) -> void:
+func interact(enter_or_exit: String):
+	if is_in_hallway:
+		return
+
 	interacting_with_player = true
 	line_edit.visible = true
 	
 	if enter_or_exit == "enter":
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		player.interacting = true
 		
 	if enter_or_exit == "exit":
 		interacting_with_player = false
@@ -92,14 +113,18 @@ func _on_line_edit_basic_order(object: String, action: String, parameter: String
 		prop_to_move = null
 		target_prop = null
 		for prop in props.get_children():
-			if "script_name" in prop and prop.script_name==object and prop.is_movable==true:
-				prop_to_move=prop
-			if "script_name" in prop and prop.script_name==parameter and prop.is_stationary==true:
-				target_prop=prop
-		print(prop_to_move)
-		print(target_prop) 
+			if action=="move":
+				if "script_name" in prop and prop.script_name==object and prop.is_movable==true:
+					prop_to_move=prop
+				if "script_name" in prop and prop.script_name==parameter and prop.is_stationary==true:
+					target_prop=prop
+					if target_prop.script_type=="printer" and target_prop.template!=null and target_prop.template.is_template:
+						target_prop=null
+					elif target_prop.script_type=="printer" and prop_to_move and prop_to_move.is_printable==false:
+						target_prop=null
 		if prop_to_move != null and target_prop!=null:
 			following_orders=true
-			order_type="movement"
+			order_type=action
 			interact("exit")
 			player.interacting=false
+			

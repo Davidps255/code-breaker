@@ -17,15 +17,17 @@ var is_player: bool = true
 var list_of_interactables: Array = []
 
 func _physics_process(delta: float) -> void:
-	
 	# Add the gravity.
+	#print(position)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
 	if Input.is_action_just_pressed("interact"): #enter interaction
 		if list_of_interactables != []:
+			print("INTERACITNG WITH")
+			print(list_of_interactables[0])
 			list_of_interactables[0].interact("enter")
-			interacting = true
+			
 			
 	if Input.is_action_just_pressed("ui_cancel") and interacting==true: #cancel interaction
 		interacting=false
@@ -70,8 +72,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_interact_area_body_entered(body: Node3D) -> void: #interactable enters interact range
-	print(body)
 	if "is_interactable" in body:
+		print(body)
 		list_of_interactables.insert(0, body)
 
 
