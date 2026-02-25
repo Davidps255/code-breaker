@@ -1901,7 +1901,7 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, -9.557588e-10, 3.7947234e-10, -0.0011645927)
 bones/0/enabled = true
-bones/0/position = Vector3(9.62731e-10, 0, -0.012751757)
+bones/0/position = Vector3(9.62731e-10, 0, 3.7598656e-06)
 bones/0/rotation = Quaternion(0.7071068, 0, 0, 0.7071067)
 bones/0/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/1/name = "Bone_end"
@@ -1913,7 +1913,7 @@ bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="RightDoor" type="BoneAttachment3D" parent="TutorialRoom2/door frame/DoorLeft/Skeleton3D" unique_id=1537713840]
-transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.62731e-10, 0, -0.012751757)
+transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.62731e-10, 0, 3.7598656e-06)
 bone_name = "Bone"
 bone_idx = 0
 
@@ -1936,7 +1936,7 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, 9.627309e-10, 0, -0.0010712084)
 bones/0/enabled = true
-bones/0/position = Vector3(9.627309e-10, 0, -0.012751757)
+bones/0/position = Vector3(9.627309e-10, 0, 3.7598656e-06)
 bones/0/rotation = Quaternion(0.7071068, 0, 0, 0.7071067)
 bones/0/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/1/name = "Bone_end"
@@ -1948,7 +1948,7 @@ bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="LeftDoor" type="BoneAttachment3D" parent="TutorialRoom2/door frame/Doorright/Skeleton3D" unique_id=563525534]
-transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.627309e-10, 0, -0.012751757)
+transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.627309e-10, 0, 3.7598656e-06)
 bone_name = "Bone"
 bone_idx = 0
 
@@ -2031,506 +2031,524 @@ script = ExtResource("5_qiiir")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile5/Area3D" unique_id=1199577810]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile6" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=866937862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -4.3304615)
+[node name="Tile6" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=661125187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -4.3494453)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile6" unique_id=1539848798]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile6" unique_id=2139877871]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile6/Area3D" unique_id=563500803]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.03051591, 0.03836274, -0.038786888)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile6/Area3D" unique_id=1057973518]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile7" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=504997043]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, -4.3304615)
+[node name="Tile7" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=207400470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, -4.3494453)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile7" unique_id=2001242009]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile7" unique_id=1055093797]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile7/Area3D" unique_id=3758687]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.029668808, 0.0034378767, -0.01713562)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile7/Area3D" unique_id=107140012]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile8" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1250618216]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -1.0247746, 1.6313583, -4.3259788)
+[node name="Tile8" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=538589391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, -4.3494453)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile8" unique_id=220817838]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile8" unique_id=740246381]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile8/Area3D" unique_id=166669534]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile8/Area3D" unique_id=2086625047]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile9" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=711125198]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -0.016407251, 1.5960118, -4.304066)
+[node name="Tile9" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1463242429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, -4.3494453)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile9" unique_id=202779470]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile9" unique_id=402179163]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile9/Area3D" unique_id=1123009908]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile9/Area3D" unique_id=1044394651]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile10" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1325089634]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -4.3304615)
+[node name="Tile10" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1153173810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -4.3494453)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile10" unique_id=1841575510]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile10" unique_id=1914013458]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile10/Area3D" unique_id=1728557032]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile10/Area3D" unique_id=1448237910]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile11" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1407858012]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -3.036741, 1.7191472, -3.383006)
+[node name="Tile11" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=708183346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -3.3615055)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile11" unique_id=968913116]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile11" unique_id=264455374]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile11/Area3D" unique_id=332634990]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile11/Area3D" unique_id=1197193765]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile12" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=91272929]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -2.0404015, 1.6842223, -3.3613548)
+[node name="Tile12" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=903897899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, -3.3615055)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile12" unique_id=2125272493]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile12" unique_id=388813648]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile12/Area3D" unique_id=957579859]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile12/Area3D" unique_id=993536264]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile13" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1924726186]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -1.0455756, 1.6493505, -3.3397365)
+[node name="Tile13" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=37811425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, -3.3615055)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile13" unique_id=1212827640]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile13" unique_id=910103734]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile13/Area3D" unique_id=1040093320]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile13/Area3D" unique_id=1068340630]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile14" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=841907663]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -0.03720832, 1.614004, -3.317824)
+[node name="Tile14" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=399788361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, -3.3615055)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile14" unique_id=1628963151]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile14" unique_id=589351483]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile14/Area3D" unique_id=1892343593]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile14/Area3D" unique_id=943458597]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile15" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1703104394]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -3.3438358)
+[node name="Tile15" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=89567242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -3.3615055)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile15" unique_id=131717703]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile15" unique_id=59963661]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile15/Area3D" unique_id=1073769464]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile15/Area3D" unique_id=487503620]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile16" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=29240267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -2.338563)
+[node name="Tile16" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=2099548210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -2.361906)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile16" unique_id=369235136]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile16" unique_id=2037188089]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile16/Area3D" unique_id=918117711]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile16/Area3D" unique_id=988957370]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile17" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=287121217]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -2.0615954, 1.7025547, -2.3564727)
+[node name="Tile17" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=797159074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, -2.361906)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile17" unique_id=1328988787]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile17" unique_id=171423790]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile17/Area3D" unique_id=1940676814]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile17/Area3D" unique_id=503744859]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile18" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=731577745]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -1.0667698, 1.6676829, -2.3348544)
+[node name="Tile18" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=643829519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, -2.361906)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile18" unique_id=1801242618]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile18" unique_id=1014966169]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile18/Area3D" unique_id=416291332]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile18/Area3D" unique_id=653614152]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile19" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=263981353]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -0.05840248, 1.6323364, -2.3129418)
+[node name="Tile19" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=858227851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, -2.361906)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile19" unique_id=1552444414]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile19" unique_id=813116512]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile19/Area3D" unique_id=581373355]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile19/Area3D" unique_id=1803836611]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile20" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1824844408]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -2.338563)
+[node name="Tile20" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1012339439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -2.361906)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile20" unique_id=340515080]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile20" unique_id=746099517]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile20/Area3D" unique_id=614845913]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile20/Area3D" unique_id=1213778358]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile21" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1428239388]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -1.3358043)
+[node name="Tile21" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=985128272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -1.3603096)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile21" unique_id=140239795]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile21" unique_id=1316753207]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile21/Area3D" unique_id=1124044074]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile21/Area3D" unique_id=417456040]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile22" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=2010558198]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -2.0827367, 1.7208412, -1.3541038)
+[node name="Tile22" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=2080734848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, -1.3603096)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile22" unique_id=1199840192]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile22" unique_id=1301167870]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile22/Area3D" unique_id=1401923516]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile22/Area3D" unique_id=1741733814]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile23" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=66579964]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -1.087911, 1.6859694, -1.3324854)
+[node name="Tile23" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1909151308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, -1.3603096)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile23" unique_id=1956680251]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile23" unique_id=231540]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile23/Area3D" unique_id=1437133577]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile23/Area3D" unique_id=86391045]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile24" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1853687483]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -0.07954371, 1.6506228, -1.310573)
+[node name="Tile24" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1910327326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, -1.3603096)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile24" unique_id=988783804]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile24" unique_id=1444972979]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile24/Area3D" unique_id=1441139736]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile24/Area3D" unique_id=497648214]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile25" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=373756285]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.95088124, 1.6145031, -1.2881811)
+[node name="Tile25" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=374250486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -1.3603096)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile25" unique_id=1496433155]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile25" unique_id=869177150]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile25/Area3D" unique_id=1039700186]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile25/Area3D" unique_id=1618170675]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile26" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=146457162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -0.30631578)
+[node name="Tile26" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=45480098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, -0.3595438)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile26" unique_id=1105400887]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile26" unique_id=1626384453]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile26/Area3D" unique_id=472209150]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile26/Area3D" unique_id=1266834822]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile27" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=867398951]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, -0.30631578)
+[node name="Tile27" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=906115688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, -0.3595438)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile27" unique_id=11431951]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile27" unique_id=1215357332]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile27/Area3D" unique_id=1547989720]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile27/Area3D" unique_id=1900966444]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile28" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=802259967]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -1.1096157, 1.7047433, -0.30339694)
+[node name="Tile28" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1126019131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, -0.3595438)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile28" unique_id=1624902391]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile28" unique_id=512326873]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile28/Area3D" unique_id=28807229]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile28/Area3D" unique_id=19740036]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile29" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=428586117]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, -0.10124844, 1.6693968, -0.2814846)
+[node name="Tile29" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1414727173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, -0.3595438)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile29" unique_id=1778988453]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile29" unique_id=942105778]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile29/Area3D" unique_id=1353963899]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile29/Area3D" unique_id=614635086]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile30" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=451105586]
-transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.92917657, 1.6332772, -0.25909257)
+[node name="Tile30" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1694133040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, -0.3595438)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile30" unique_id=467311123]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile30" unique_id=601265344]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile30/Area3D" unique_id=32239850]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile30/Area3D" unique_id=1948718283]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile31" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=97458416]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 0.7157459)
+[node name="Tile31" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=918507213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 0.6274252)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile31" unique_id=377354954]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile31" unique_id=1521856711]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile31/Area3D" unique_id=2096686380]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile31/Area3D" unique_id=1166763155]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile32" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=2010356015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 0.7157459)
+[node name="Tile32" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1612635963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 0.6274252)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile32" unique_id=1057408395]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile32" unique_id=584778986]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile32/Area3D" unique_id=2124186574]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile32/Area3D" unique_id=1235253604]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile33" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1499266115]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 0.7157459)
+[node name="Tile33" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=805460152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 0.6274252)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile33" unique_id=894004714]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile33" unique_id=1048468869]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile33/Area3D" unique_id=1509605706]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile33/Area3D" unique_id=1545850692]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile34" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1928233201]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 0.7157459)
+[node name="Tile34" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1910829540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 0.6274252)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile34" unique_id=1524165783]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile34" unique_id=1180749736]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile34/Area3D" unique_id=933652035]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile34/Area3D" unique_id=2037846145]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile35" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1653698325]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 0.7157459)
+[node name="Tile35" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=133586734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 0.6274252)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile35" unique_id=2030851011]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile35" unique_id=2008556211]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile35/Area3D" unique_id=2045172004]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile35/Area3D" unique_id=1287469166]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile36" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1210540969]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 1.738934)
+[node name="Tile36" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=2050919558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 1.6321974)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile36" unique_id=696117106]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile36" unique_id=1858013003]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile36/Area3D" unique_id=1254469620]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile36/Area3D" unique_id=531443766]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile37" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=654192945]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 1.738934)
+[node name="Tile37" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=782823285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 1.6321974)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile37" unique_id=1351924030]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile37" unique_id=1011318251]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile37/Area3D" unique_id=976286780]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile37/Area3D" unique_id=2145794589]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile38" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1187943376]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 1.738934)
+[node name="Tile38" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1013543236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 1.6321974)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile38" unique_id=1230414297]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile38" unique_id=1103962628]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile38/Area3D" unique_id=692618269]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile38/Area3D" unique_id=2082725801]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile39" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1022739972]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 1.738934)
+[node name="Tile39" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1833032372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 1.6321974)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile39" unique_id=1219524982]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile39" unique_id=761171055]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile39/Area3D" unique_id=161674036]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile39/Area3D" unique_id=2059483143]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile40" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=41529059]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 1.738934)
+[node name="Tile40" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=766627886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 1.6321974)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile40" unique_id=929552958]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile40" unique_id=1806280254]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile40/Area3D" unique_id=1041864605]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile40/Area3D" unique_id=1371555165]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile41" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=116350150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 2.7746716)
+[node name="Tile41" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=913074185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 2.6240082)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile41" unique_id=426681471]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile41" unique_id=1590775022]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile41/Area3D" unique_id=216968087]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile41/Area3D" unique_id=25166704]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile42" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=369349132]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 2.7746716)
+[node name="Tile42" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=505567425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 2.6240082)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile42" unique_id=24497670]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile42" unique_id=1296650263]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile42/Area3D" unique_id=1463407830]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile42/Area3D" unique_id=690970811]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile43" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1462884582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 2.7746716)
+[node name="Tile43" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1074970034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 2.6240082)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile43" unique_id=637539111]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile43" unique_id=1974054299]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile43/Area3D" unique_id=663734371]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile43/Area3D" unique_id=1902554443]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile44" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=623777521]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 2.7746716)
+[node name="Tile44" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=962805932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 2.6240082)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile44" unique_id=265031678]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile44" unique_id=218699881]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile44/Area3D" unique_id=1703101643]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile44/Area3D" unique_id=1412608333]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile45" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1431155937]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 2.7746716)
+[node name="Tile45" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=272777512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 2.6240082)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile45" unique_id=1939600745]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile45" unique_id=822862410]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile45/Area3D" unique_id=569742082]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile45/Area3D" unique_id=456264300]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile46" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=154513782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 3.8010106)
+[node name="Tile46" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1810847540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 3.6376848)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile46" unique_id=1999175265]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile46" unique_id=1898251966]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile46/Area3D" unique_id=231711616]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile46/Area3D" unique_id=927067060]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile47" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=64679743]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 3.8010106)
+[node name="Tile47" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=477207956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 3.6376848)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile47" unique_id=269790527]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile47" unique_id=1904029904]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile47/Area3D" unique_id=556163637]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile47/Area3D" unique_id=2099614275]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile48" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=986158171]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 3.8010106)
+[node name="Tile48" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=633076840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 3.6376848)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile48" unique_id=1058061271]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile48" unique_id=1264002822]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile48/Area3D" unique_id=1230248662]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile48/Area3D" unique_id=2099558283]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile49" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=2002691656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 3.8010106)
+[node name="Tile49" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1476920951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 3.6376848)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile49" unique_id=421783585]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile49" unique_id=481905924]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile49/Area3D" unique_id=1384870681]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile49/Area3D" unique_id=948448313]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile50" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1838557729]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 3.8010106)
+[node name="Tile50" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1809060750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 3.6376848)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile50" unique_id=1240782740]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile50" unique_id=272930786]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile50/Area3D" unique_id=399191723]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile50/Area3D" unique_id=553706389]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile51" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1933990795]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 4.8220534)
+[node name="Tile51" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1192723054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464559, 1.6627922, 4.625287)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile51" unique_id=225749191]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile51" unique_id=758630016]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile51/Area3D" unique_id=1605866178]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile51/Area3D" unique_id=596443386]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile52" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1470314540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 4.8220534)
+[node name="Tile52" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1164585953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0492692, 1.6627922, 4.625287)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile52" unique_id=1314091785]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile52" unique_id=2051678388]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile52/Area3D" unique_id=806131032]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile52/Area3D" unique_id=908864611]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.05079043, -0.014831543, -0.016746521)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile53" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1257139364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 4.8220534)
+[node name="Tile53" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=531421030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0535977, 1.6627922, 4.625287)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile53" unique_id=2032664761]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile53" unique_id=1003269517]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile53/Area3D" unique_id=948657074]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile53/Area3D" unique_id=438837679]
+transform = Transform3D(0.99915063, 0.035405744, -0.021083035, -0.03502341, 0.99922013, 0.018236179, 0.021712244, -0.017482303, 0.9996114, 0.04994464, -0.04970336, 0.004872322)
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile54" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=57968961]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 4.8220534)
+[node name="Tile54" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=1378450850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044373155, 1.6627922, 4.625287)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile54" unique_id=1255135784]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile54" unique_id=1527884047]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile54/Area3D" unique_id=66987946]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile54/Area3D" unique_id=582380267]
 shape = SubResource("BoxShape3D_pcieh")
 
-[node name="Tile55" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=995451041]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 4.8220534)
+[node name="Tile55" type="NavigationRegion3D" parent="TutorialRoom2/FloorTiles" unique_id=796230469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9869276, 1.6627922, 4.625287)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
 
-[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile55" unique_id=1951263467]
+[node name="Area3D" type="Area3D" parent="TutorialRoom2/FloorTiles/Tile55" unique_id=1945091291]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile55/Area3D" unique_id=1863316281]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialRoom2/FloorTiles/Tile55/Area3D" unique_id=2004088720]
 shape = SubResource("BoxShape3D_pcieh")
 
 [node name="TutorialActivationManager2" type="Node3D" parent="TutorialRoom2" unique_id=172392246 node_paths=PackedStringArray("exit_door", "printer", "props")]
@@ -2541,14 +2559,13 @@ props = NodePath("../Props")
 
 [node name="Props" type="Node3D" parent="TutorialRoom2" unique_id=1490778495]
 
+[node name="3d_printer" parent="TutorialRoom2/Props" unique_id=916570627 node_paths=PackedStringArray("props") instance=ExtResource("12_qdb1i")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 8.874249, 2.6895306, -20.782238)
+script_name = "printer1"
+props = NodePath("..")
+
 [node name="SimpleLever" parent="TutorialRoom2/Props" unique_id=1098562966 instance=ExtResource("13_ads8o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.229281, 3.4765263, -17.649212)
-
-[node name="3d_printer" parent="TutorialRoom2/Props" unique_id=916570627 node_paths=PackedStringArray("miki", "props") instance=ExtResource("12_qdb1i")]
-transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 9.358276, 2.993326, -20.758284)
-script_name = "printer1"
-miki = NodePath("../../../Miki")
-props = NodePath("..")
 
 [node name="MetalBox" parent="TutorialRoom2/Props" unique_id=429336907 instance=ExtResource("8_t7fgv")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 12.6049595, 3.4828413, -20.703499)

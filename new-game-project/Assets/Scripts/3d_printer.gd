@@ -11,8 +11,9 @@ const SPEED: float = 5.0
 @export var is_template: bool = false
 @export var is_clone: bool = false
 @export var template = null
-@export var miki: CharacterBody3D
 @export var props: Node3D
+@export var sole_occupant: bool = false 
+
 
 var clone = null
 var frames_passed: int =0
@@ -24,9 +25,7 @@ func printer_print():
 	charges_remaining-=1
 	print(template)
 	clone = template.duplicate(true)
-
 	template.is_template=false
-	template=null
 
 func _physics_process(delta: float) -> void:
 	if clone!=null:
@@ -35,7 +34,16 @@ func _physics_process(delta: float) -> void:
 		if frames_passed>100:
 			print("CLONE COMPLETE")
 			props.add_child(clone)
-			#clone.is_clone=true
-			clone.global_position=miki.global_position+Vector3(0,2,0)
-			clone=null
+			clone.set_script(template.get_script())
+			clone.is_clone=true
+			clone.global_position=global_position+Vector3(0, 0.5, 0)
+			clone.tile_coordinates=tile_coordinates
 			frames_passed=0
+			
+			var prop_count: int = 0
+			for prop in props.get_children():
+				if "script_type" in prop and prop.script_type==template.script_type:
+					prop_count+=1
+			clone.script_name=template.script_type+str(prop_count)
+			template=null
+			clone=null

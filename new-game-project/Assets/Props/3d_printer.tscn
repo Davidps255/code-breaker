@@ -178,7 +178,7 @@ _data = {
 }
 
 [node name="3d_printer" type="Node3D" unique_id=916570627]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_lpkcr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=636402156]

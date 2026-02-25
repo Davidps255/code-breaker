@@ -1,6 +1,6 @@
 extends Node3D
 @export var script_name: String
-@export var script_type: String = "pressure_plate"
+@export var script_type: String = "pressureplate"
 @export var is_stationary: bool = true
 @export var is_movable: bool = false
 @export var tile_coordinates: Vector2 = Vector2(-9,-9)
@@ -8,6 +8,7 @@ extends Node3D
 @export var is_printable: bool = false
 @export var is_template: bool = false
 @export var is_clone: bool = false
+@export var sole_occupant: bool = false 
 
 var active: bool = true
 signal pressed()

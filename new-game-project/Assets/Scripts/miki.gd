@@ -44,13 +44,14 @@ func find_target_destination(target):
 		print("MIKI COULD NOT FIND VIABLE PATHFIND TILE")
 
 func move_to_target():
-	var current_location: Vector3 = position
-	var next_location: Vector3 = nav_agent.get_next_path_position();
+	var current_location: Vector3 = global_position
+	var next_location: Vector3 = nav_agent.get_next_path_position()
 	var new_velocity = (next_location - current_location).normalized() * SPEED
+	
 	new_velocity.y=0;
 	
 	velocity=velocity.move_toward(new_velocity, 0.25)
-	#print("NEW VELOCITY: " + str(new_velocity))
+	print("NEW VELOCITY: " + str(new_velocity))
 
 
 func _physics_process(delta: float) -> void:
@@ -72,22 +73,25 @@ func _physics_process(delta: float) -> void:
 		if is_carrying_target == false:
 			find_target_destination(prop_to_move)
 			move_to_target()
-			if (self.position.distance_to(prop_to_move.global_position) < 2.3):
+			if (self.global_position.distance_to(prop_to_move.global_position) < 3.0):
 				is_carrying_target = true
 				prop_to_move.is_template=false
+			print(self.global_position.distance_to(prop_to_move.global_position))
 		if is_carrying_target == true:
 			prop_to_move.global_position = self.position + Vector3(0, 4, 0)
 			find_target_destination(target_prop)
 			move_to_target()
-			if (self.position.distance_to(target_prop.global_position) < 2.3):
+			if (self.global_position.distance_to(target_prop.global_position) < 3.0):
 				is_carrying_target = false
 				following_orders=false
 				if order_type=="move":
 					prop_to_move.global_position = target_prop.global_position + Vector3(0, 1, 0)
 					if target_prop.script_type=="printer":
+						prop_to_move.global_position = target_prop.global_position + Vector3(0, 1.5, 0)
 						target_prop.template=prop_to_move
 						prop_to_move.is_template=true
-						
+
+				prop_to_move.tile_coordinates = target_prop.tile_coordinates
 
 		
 	move_and_slide()
@@ -122,9 +126,18 @@ func _on_line_edit_basic_order(object: String, action: String, parameter: String
 						target_prop=null
 					elif target_prop.script_type=="printer" and prop_to_move and prop_to_move.is_printable==false:
 						target_prop=null
+						
 		if prop_to_move != null and target_prop!=null:
-			following_orders=true
-			order_type=action
-			interact("exit")
-			player.interacting=false
-			
+			var valid_move: bool = true
+			for prop in props.get_children():
+				if "tile_coordinates" in prop and prop.tile_coordinates==target_prop.tile_coordinates and prop.sole_occupant==true:
+					valid_move=false
+					print("SPACE ALREADY OCCUPIED")
+			if valid_move:
+				_successful_order(action)
+				
+func _successful_order(action: String):
+	following_orders=true
+	order_type=action
+	interact("exit")
+	player.interacting=false
