@@ -56,10 +56,10 @@ func move_to_target():
 	
 	velocity=velocity.move_toward(new_velocity, 0.25)
 	if velocity != Vector3(0,0,0) and not interacting_with_player:
-		var old = transform.basis
+		var old = rotation.y
 		look_at(velocity+position)
-		var new = transform.basis
-		transform.basis = lerp(old, new, .1)
+		var new = rotation.y
+		rotation.y = lerp(old, new, .1)
 
 
 func _physics_process(delta: float) -> void:
@@ -95,12 +95,11 @@ func _physics_process(delta: float) -> void:
 			if (self.global_position.distance_to(target_prop.global_position) < 3.0):
 				is_carrying_target = false
 				following_orders=false
-				if order_type=="move":
-					prop_to_move.global_position = target_prop.global_position + Vector3(0, 1, 0)
-					if target_prop.script_type=="printer":
-						prop_to_move.global_position = target_prop.global_position + Vector3(0, 1.5, 0)
-						target_prop.template=prop_to_move
-						prop_to_move.is_template=true
+				prop_to_move.global_position = target_prop.global_position + Vector3(0, 1, 0)
+				if target_prop.script_type=="printer":
+					prop_to_move.global_position = target_prop.global_position + Vector3(0, 1.5, 0)
+					target_prop.template=prop_to_move
+					prop_to_move.is_template=true
 
 				prop_to_move.tile_coordinates = target_prop.tile_coordinates
 
