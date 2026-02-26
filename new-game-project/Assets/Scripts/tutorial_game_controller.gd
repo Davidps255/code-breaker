@@ -49,7 +49,7 @@ func _set_tiles(x_length: int, tilemanager: Node3D) -> void:
 	var row_list=[]
 	for tile in tilemanager.get_children():
 		row_list.append(tile)
-		tile.coordinates=Vector2(x, y)
+		tile.tile_coordinates=Vector2(x, y)
 		tile.update_coordinates()
 		x+=1
 		if (x==x_length):

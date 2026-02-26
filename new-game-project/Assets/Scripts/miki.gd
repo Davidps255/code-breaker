@@ -5,19 +5,24 @@ extends CharacterBody3D
 @export var props: Node3D
 @onready var nav_agent = $NavigationAgent3D
 var tile_options: Array
+var tile_coordinates: Vector2
 var is_interactable: bool = true
 var interactable_type: String = "miki"
 var interacting_with_player: bool = false
 var following_orders: bool = false
 var order_type: String = "move"
 var miki_animator: AnimationPlayer
-var cardinal_vectors: Array = [Vector2(-1,0), Vector2(1,0), Vector2(0,-1), Vector2(0,1)]
+var cardinal_vectors: Array = [Vector2(0,-1), Vector2(1,0), Vector2(0,1), Vector2(-1,0)]
 const SPEED: float = 5.0
 
 var prop_to_move = null
 var target_prop = null
+var target_tile = null
 var is_carrying_target: bool = false
+var target_carried = null
 var is_in_hallway: bool = false
+var is_under_manual_control: bool = false
+var frame_counter: int = 0
 
 var documentation_open: bool = false
 
@@ -36,11 +41,14 @@ func find_target_destination(target):
 				tile_options.append(GlobalVariables.tile_list[possible_y][possible_x])
 	var closest_tile: NavigationRegion3D = null
 	for tile in tile_options:
-		if closest_tile==null:
-			closest_tile=tile
+		if tile.inacessible==true and is_under_manual_control==false:
+			pass
 		else:
-			if (position.distance_to(tile.global_position) < position.distance_to(closest_tile.global_position)):
+			if closest_tile==null:
 				closest_tile=tile
+			else:
+				if (position.distance_to(tile.global_position) < position.distance_to(closest_tile.global_position)):
+					closest_tile=tile
 	
 	if closest_tile!=null:
 		nav_agent.target_position=closest_tile.global_position
@@ -55,6 +63,7 @@ func move_to_target():
 	new_velocity.y=0;
 	
 	velocity=velocity.move_toward(new_velocity, 0.25)
+	print(velocity)
 	if velocity != Vector3(0,0,0) and not interacting_with_player:
 		var old = rotation.y
 		look_at(velocity+position)
@@ -63,6 +72,10 @@ func move_to_target():
 
 
 func _physics_process(delta: float) -> void:
+	if target_carried != null and is_carrying_target:
+		target_carried.tile_coordinates = tile_coordinates
+		target_carried.global_position = self.position + Vector3(0, 4, 0)
+		
 	if interacting_with_player and miki_animator.current_animation_position>1.1:
 			miki_animator.pause()
 	if is_in_hallway:
@@ -85,23 +98,32 @@ func _physics_process(delta: float) -> void:
 			move_to_target()
 			if (self.global_position.distance_to(prop_to_move.global_position) < 3.0):
 				is_carrying_target = true
+				target_carried = prop_to_move
 				prop_to_move.is_template=false
 				
 		if is_carrying_target == true:
-			prop_to_move.global_position = self.position + Vector3(0, 4, 0)
 			find_target_destination(target_prop)
 			move_to_target()
 			if (self.global_position.distance_to(target_prop.global_position) < 3.0):
 				is_carrying_target = false
+				target_carried = null
 				following_orders=false
 				prop_to_move.global_position = target_prop.global_position + Vector3(0, 1, 0)
 				if target_prop.script_type=="printer":
 					prop_to_move.global_position = target_prop.global_position + Vector3(0, 1.5, 0)
 					target_prop.template=prop_to_move
 					prop_to_move.is_template=true
-
 				prop_to_move.tile_coordinates = target_prop.tile_coordinates
+				
+	elif following_orders == true and order_type=="move_miki":
+		frame_counter+=1
+		nav_agent.target_position=target_tile.global_position
+		move_to_target()
 
+		if (frame_counter>1000) or (global_position.distance_to(nav_agent.target_position) < 0.1):
+			is_under_manual_control = false
+			following_orders=false
+			frame_counter=0
 		
 	move_and_slide()
 	
@@ -126,13 +148,15 @@ func interact(enter_or_exit: String):
 		miki_animator.play()
 
 func _on_line_edit_basic_order(object: String, action: String, parameter: String) -> void:
-	if action=="move":
+	if action=="move": # as in move prop to another place
 		prop_to_move = null
 		target_prop = null
 		for prop in props.get_children():
 			if action=="move":
 				if "script_name" in prop and prop.script_name==object and prop.is_movable==true:
 					prop_to_move=prop
+					if is_carrying_target == true and target_carried != prop_to_move: #Miki can't move another prop while carrying a prop
+						prop_to_move=null
 				if "script_name" in prop and prop.script_name==parameter and prop.is_stationary==true:
 					target_prop=prop
 					if target_prop.script_type=="printer" and target_prop.template!=null and target_prop.template.is_template:
@@ -147,7 +171,35 @@ func _on_line_edit_basic_order(object: String, action: String, parameter: String
 					valid_move=false
 					print("SPACE ALREADY OCCUPIED")
 			if valid_move:
-				_successful_order(action)
+				_successful_order("move")
+				
+	elif action=="move_miki" or action=="grab_miki":
+		var target_tile_coordinates = null
+		match parameter:
+			"north": 
+				target_tile_coordinates = tile_coordinates + cardinal_vectors[0]
+			"east":
+				target_tile_coordinates = tile_coordinates + cardinal_vectors[1]
+			"south":
+				target_tile_coordinates = tile_coordinates + cardinal_vectors[2]
+			"west":
+				target_tile_coordinates = tile_coordinates + cardinal_vectors[3]
+			
+		if target_tile_coordinates and 0 <= target_tile_coordinates.x and target_tile_coordinates.x < len(GlobalVariables.tile_list[0]):
+			if 0 <= target_tile_coordinates.y and target_tile_coordinates.y < len(GlobalVariables.tile_list):
+				target_tile=GlobalVariables.tile_list[target_tile_coordinates.y][target_tile_coordinates.x]
+				if action=="move_miki":
+					is_under_manual_control=true
+					_successful_order("move_miki")
+					
+				elif action=="grab_miki":
+					for prop in props:
+						if "tile_coordinates" in prop and prop.tile_coordinates==target_tile.tile_coordinates:
+							is_carrying_target = true
+							target_carried = prop
+							break
+					interact("exit")
+					player.interacting=false
 				
 func _successful_order(action: String):
 	following_orders=true

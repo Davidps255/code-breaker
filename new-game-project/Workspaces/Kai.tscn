@@ -1448,7 +1448,7 @@ tracks/7/keys = PackedFloat32Array(0, 1, 2.3518949e-07, -8.380948e-08, 6.137969e
 
 [sub_resource type="Animation" id="Animation_ded6c"]
 resource_name = "ArmatureAction_001"
-length = 1.25
+length = 1.7666667
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -1577,6 +1577,9 @@ _data = {
 &"DoorLeftAction": SubResource("Animation_20pv1"),
 &"DoorLeftAction_001": SubResource("Animation_jgxom")
 }
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_at88s"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="Kai" type="Node3D" unique_id=1877062512 node_paths=PackedStringArray("tutorial_1", "tutorial_1_pressure_plate", "tutorial_1_floor_tiles", "tutorial_2", "tutorial_2_pressure_plate", "tutorial_2_props", "tutorial_2_floor_tiles", "tutorial_3", "tutorial_3_props", "tutorial_3_floor_tiles", "miki")]
 script = ExtResource("1_ads8o")
@@ -1754,7 +1757,7 @@ scale = Vector2(0.884, 0.884)
 texture = ExtResource("2_jgxto")
 
 [node name="Miki" type="CharacterBody3D" parent="." unique_id=1406810247 node_paths=PackedStringArray("player", "line_edit", "props")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9181963, -21.70893)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9181963, -24.267881)
 script = ExtResource("5_pcieh")
 player = NodePath("../Player")
 line_edit = NodePath("LineEdit")
@@ -3810,12 +3813,12 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0.99999994, 7.1054274e-15, 8.4703295e-22, -7.1054274e-15, 0.99999994, -3.009266e-36, -8.4703295e-22, -3.009266e-36, 0.99999994, 2.3518949e-07, -8.380948e-08, 6.137969e-08)
 bones/0/enabled = true
-bones/0/position = Vector3(-9.5575885e-08, -1.2659409, -4.1249592e-07)
+bones/0/position = Vector3(-9.5575885e-08, -0.010671735, -3.4772825e-09)
 bones/0/rotation = Quaternion(0, 4.235165e-22, -3.552714e-15, 1)
 bones/0/scale = Vector3(0.99999994, 0.99999994, 0.99999994)
 
 [node name="Bone" type="BoneAttachment3D" parent="TutorialRoom3/2026_02_17_tutorialRoom3/DoorLeft_001/Skeleton3D" unique_id=971580731]
-transform = Transform3D(0.99999994, 7.1054274e-15, 8.4703295e-22, -7.1054274e-15, 0.99999994, -3.009266e-36, -8.4703295e-22, -3.009266e-36, 0.99999994, -9.5575885e-08, -1.2659409, -4.1249592e-07)
+transform = Transform3D(0.99999994, 7.1054274e-15, 8.4703295e-22, -7.1054274e-15, 0.99999994, -3.009266e-36, -8.4703295e-22, -3.009266e-36, 0.99999994, -9.5575885e-08, -0.010671735, -3.4772825e-09)
 bone_name = "Bone"
 bone_idx = 0
 
@@ -3832,12 +3835,12 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0.99999994, -7.1054274e-15, 0, 7.1054274e-15, 0.99999994, 0, 0, 0, 0.99999994, -4.8601794e-07, 5.521904e-07, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(9.6273084e-08, -1.2751757, 0)
+bones/0/position = Vector3(9.6273084e-08, 0.0003759861, 0)
 bones/0/rotation = Quaternion(0, 0, 3.552714e-15, 1)
 bones/0/scale = Vector3(0.99999994, 0.99999994, 0.99999994)
 
 [node name="Bone" type="BoneAttachment3D" parent="TutorialRoom3/2026_02_17_tutorialRoom3/Doorright_001/Skeleton3D" unique_id=1462152025]
-transform = Transform3D(0.99999994, -7.1054274e-15, 0, 7.1054274e-15, 0.99999994, 0, 0, 0, 0.99999994, 9.6273084e-08, -1.2751757, 0)
+transform = Transform3D(0.99999994, -7.1054274e-15, 0, 7.1054274e-15, 0.99999994, 0, 0, 0, 0.99999994, 9.6273084e-08, 0.0003759861, 0)
 bone_name = "Bone"
 bone_idx = 0
 
@@ -3935,6 +3938,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95525455, 1.6627922, -5.332285)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile5" unique_id=456508420]
 
@@ -3945,6 +3949,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9524412, 1.6627922, -5.332285)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile6" unique_id=1200762264]
 
@@ -3956,6 +3961,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9564593, 1.6627922, -5.332285)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile7" unique_id=1597290812]
 
@@ -4009,6 +4015,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95525455, 1.6627922, -4.326746)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile12" unique_id=1305203369]
 
@@ -4019,6 +4026,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9524412, 1.6627922, -4.326746)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile13" unique_id=453130493]
 
@@ -4030,6 +4038,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9564593, 1.6627922, -4.326746)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile14" unique_id=695506114]
 
@@ -4083,6 +4092,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95525455, 1.6627922, -3.3280623)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile19" unique_id=1394747902]
 
@@ -4093,6 +4103,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9524412, 1.6627922, -3.3280623)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile20" unique_id=732728796]
 
@@ -4104,6 +4115,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9564593, 1.6627922, -3.3280623)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile21" unique_id=1978017437]
 
@@ -4157,6 +4169,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95525455, 1.6627922, -2.325244)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile26" unique_id=808807492]
 
@@ -4167,6 +4180,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9524412, 1.6627922, -2.325244)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile27" unique_id=1018045035]
 
@@ -4178,6 +4192,7 @@ shape = SubResource("BoxShape3D_pcieh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9564593, 1.6627922, -2.325244)
 navigation_mesh = SubResource("NavigationMesh_qiiir")
 script = ExtResource("5_qiiir")
+inacessible = true
 
 [node name="Area3D" type="Area3D" parent="TutorialRoom3/FloorTiles/Tile28" unique_id=1433811114]
 
@@ -4730,6 +4745,33 @@ tile_coordinates = Vector2(5, 10)
 
 [node name="LeverStaticBody" parent="TutorialRoom3/Props" unique_id=1911040413 instance=ExtResource("13_ads8o")]
 transform = Transform3D(3.5774643e-09, 0, -0.3, 0, 0.3, 0, 0.3, 0, 3.5774643e-09, 2.732997, 3.363452, -31.359615)
+
+[node name="TileIndicators" type="Node3D" parent="TutorialRoom3" unique_id=401886343]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="TutorialRoom3/TileIndicators" unique_id=18531056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4386604, 2.1989465, -34.02787)
+size = Vector3(0.08154297, 0.043, 4.131897)
+material = SubResource("ORMMaterial3D_at88s")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="TutorialRoom3/TileIndicators" unique_id=1567258463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9317693, 2.1989465, -34.702015)
+size = Vector3(3.375702, 0.043, 0.09159088)
+material = SubResource("ORMMaterial3D_at88s")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="TutorialRoom3/TileIndicators" unique_id=1330120572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9317693, 2.1989465, -33.720135)
+size = Vector3(3.375702, 0.043, 0.09159088)
+material = SubResource("ORMMaterial3D_at88s")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="TutorialRoom3/TileIndicators" unique_id=631082761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9317693, 2.1989465, -32.7357)
+size = Vector3(3.375702, 0.043, 0.09159088)
+material = SubResource("ORMMaterial3D_at88s")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="TutorialRoom3/TileIndicators" unique_id=2093972143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5502164, 2.229424, -34.02787)
+size = Vector3(0.08154297, 0.043, 4.131897)
+material = SubResource("ORMMaterial3D_at88s")
 
 [connection signal="body_entered" from="Player/InteractArea" to="Player" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Player/InteractArea" to="Player" method="_on_interact_area_body_exited"]

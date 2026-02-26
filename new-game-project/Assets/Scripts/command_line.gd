@@ -22,6 +22,8 @@ func received_command(input: String):
 		write_function(input)
 	elif input.contains("/") and input.contains("@"):
 		parse_command(input)
+	elif (input.contains("move") or input.contains("grab")) and input.length()>8:
+		parse_movement_or_grab(input)
 	else:
 		print("invalid command")
 	
@@ -51,6 +53,22 @@ func parse_command(input: String):
 	print(action)
 	print(argument)
 	emit_signal("basic_order", object, action, argument)
+
+func parse_movement_or_grab(input: String):
+	var quote = input.find('"')
+
+	var object = "miki"
+	var action = "move_miki"
+	if "grab" in action:
+		action = "grab_miki"
+	var argument= input.substr(
+		quote+1,
+		input.length() - 8)
+	print(object)
+	print(action)
+	print(argument)
+	emit_signal("basic_order", object, action, argument)
+
 
 
 # actions

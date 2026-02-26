@@ -10,7 +10,6 @@ const SPEED: float = 5.0
 @export var is_template: bool = false
 @export var is_clone: bool = false
 @export var sole_occupant: bool = true 
-@export var vel: Vector3
 
 
 func _physics_process(delta: float) -> void:
