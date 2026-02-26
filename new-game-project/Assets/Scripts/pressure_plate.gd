@@ -10,7 +10,7 @@ extends Node3D
 @export var is_clone: bool = false
 @export var sole_occupant: bool = false 
 
-var active: bool = true
+var active: bool = false
 signal pressed()
 signal unpressed()
 
@@ -27,6 +27,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		if "script_name" in object and object.is_movable==true:
 			movable_found = true
 			break
-	if movable_found == false:
+	if "script_name" in body and body.is_movable==true and movable_found == false and active==true:
 		active=false
 		emit_signal("unpressed")

@@ -3,9 +3,11 @@ class_name CommandLine
 
 @export var line_edit: LineEdit 
 
-var function_array: Array[String]
+var function_array: Array = []
+var read_mode: bool = false
 
 signal basic_order(object: String, action: String, parameter: String)
+signal function_order(list_of_orders)
 
 # index in function array 
 var index: int = 0
@@ -17,28 +19,34 @@ func received_command(input: String):
 	input = input.to_lower() #to lowercase
 	
 	if (input == "end"):
-		index = 0
-	elif (input.begins_with("function") or index > 0):
-		write_function(input)
+		read_mode=false
+		set("theme_override_colors/font_color",Color(0.865, 0.879, 0.873, 1.0))
+		emit_signal("function_order", function_array)
+		print(function_array)
+		function_array=[]
+		
+
+	elif (input.begins_with("func()")):
+		read_mode = true
+		set("theme_override_colors/font_color",Color(0.573, 0.979, 0.722, 1.0))
+
 	elif input.contains("/") and input.contains("@"):
-		parse_command(input)
+		parse_command(input, read_mode)
 	elif (input.contains("move") or input.contains("grab")) and input.length()>8:
-		parse_movement_or_grab(input)
+		parse_movement_or_grab(input, read_mode)
 	else:
+		if read_mode:
+			function_array=[]
+			exit_read_mode()
 		print("invalid command")
 	
 	line_edit.text = "" #clears command after execution
 
 
-func write_function(input: String):
-	if (index == 0):
-		# get the name of created function
-		function_array[index] = input.substr(8)
-	else:
-		function_array[index] = input
 
 
-func parse_command(input: String):
+
+func parse_command(input: String, is_func: bool):
 	# separating arguments
 	var slash = input.find("/") #index of slash
 	var at = input.find("@") #index of at symbol
@@ -52,14 +60,16 @@ func parse_command(input: String):
 	print(object)
 	print(action)
 	print(argument)
-	emit_signal("basic_order", object, action, argument)
+	if is_func==false:
+		emit_signal("basic_order", object, action, argument)
+	else:
+		function_array.append( [object, action, argument] )
 
-func parse_movement_or_grab(input: String):
+func parse_movement_or_grab(input: String, is_func: bool):
 	var quote = input.find('"')
-
-	var object = "miki"
 	var action = "move_miki"
-	if "grab" in action:
+	var object = "miki"
+	if "grab" in input:
 		action = "grab_miki"
 	var argument= input.substr(
 		quote+1,
@@ -67,9 +77,17 @@ func parse_movement_or_grab(input: String):
 	print(object)
 	print(action)
 	print(argument)
-	emit_signal("basic_order", object, action, argument)
+	if is_func==false:
+		emit_signal("basic_order", object, action, argument)
+	else:
+		function_array.append( [object, action, argument] )
 
-
+func exit_read_mode():
+	read_mode=false
+	set("theme_override_colors/font_color",Color(0.865, 0.879, 0.873, 1.0))
+	emit_signal("function_order", function_array)
+	print(function_array)
+	function_array=[]
 
 # actions
 	#north, south, east, west (movment, takes numerical argument)

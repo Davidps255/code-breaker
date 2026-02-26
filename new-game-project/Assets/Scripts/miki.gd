@@ -9,7 +9,9 @@ var tile_coordinates: Vector2
 var is_interactable: bool = true
 var interactable_type: String = "miki"
 var interacting_with_player: bool = false
-var following_orders: bool = false
+var following_order: bool = false
+var following_function: bool = false
+var order_queue: Array
 var order_type: String = "move"
 var miki_animator: AnimationPlayer
 var cardinal_vectors: Array = [Vector2(0,-1), Vector2(1,0), Vector2(0,1), Vector2(-1,0)]
@@ -63,7 +65,6 @@ func move_to_target():
 	new_velocity.y=0;
 	
 	velocity=velocity.move_toward(new_velocity, 0.25)
-	print(velocity)
 	if velocity != Vector3(0,0,0) and not interacting_with_player:
 		var old = rotation.y
 		look_at(velocity+position)
@@ -72,6 +73,12 @@ func move_to_target():
 
 
 func _physics_process(delta: float) -> void:
+	if following_function and order_queue.size()>0 and not following_order:
+		_on_line_edit_basic_order(order_queue[0][0], order_queue[0][1], order_queue[0][2])
+		order_queue.remove_at(0)
+		if order_queue.size()==0:
+			following_function=false
+		
 	if target_carried != null and is_carrying_target:
 		target_carried.tile_coordinates = tile_coordinates
 		target_carried.global_position = self.position + Vector3(0, 4, 0)
@@ -81,18 +88,20 @@ func _physics_process(delta: float) -> void:
 	if is_in_hallway:
 		#print("hallway movement")
 		nav_agent.target_position=player.global_position
-		following_orders = false
+		following_order = false
+		following_function = false
+		order_queue = []
 		move_to_target()
 		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if not following_orders and not is_in_hallway:
+	if not following_order and not is_in_hallway:
 		#print("NORMAL MOVEMENT")
 		find_target_destination(player)
 		move_to_target()
 		
-	if following_orders==true and order_type=="move":
+	if following_order==true and order_type=="move":
 		if is_carrying_target == false:
 			find_target_destination(prop_to_move)
 			move_to_target()
@@ -107,7 +116,7 @@ func _physics_process(delta: float) -> void:
 			if (self.global_position.distance_to(target_prop.global_position) < 3.0):
 				is_carrying_target = false
 				target_carried = null
-				following_orders=false
+				following_order=false
 				prop_to_move.global_position = target_prop.global_position + Vector3(0, 1, 0)
 				if target_prop.script_type=="printer":
 					prop_to_move.global_position = target_prop.global_position + Vector3(0, 1.5, 0)
@@ -115,14 +124,14 @@ func _physics_process(delta: float) -> void:
 					prop_to_move.is_template=true
 				prop_to_move.tile_coordinates = target_prop.tile_coordinates
 				
-	elif following_orders == true and order_type=="move_miki":
+	elif following_order == true and order_type=="move_miki":
 		frame_counter+=1
 		nav_agent.target_position=target_tile.global_position
 		move_to_target()
 
 		if (frame_counter>1000) or (global_position.distance_to(nav_agent.target_position) < 0.1):
 			is_under_manual_control = false
-			following_orders=false
+			following_order=false
 			frame_counter=0
 		
 	move_and_slide()
@@ -135,7 +144,7 @@ func interact(enter_or_exit: String):
 	line_edit.visible = true
 	
 	if enter_or_exit == "enter":
-		if following_orders:
+		if following_order:
 			return
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		player.interacting = true
@@ -193,16 +202,25 @@ func _on_line_edit_basic_order(object: String, action: String, parameter: String
 					_successful_order("move_miki")
 					
 				elif action=="grab_miki":
-					for prop in props:
-						if "tile_coordinates" in prop and prop.tile_coordinates==target_tile.tile_coordinates:
+					for prop in props.get_children():
+						if "tile_coordinates" in prop and prop.is_movable and prop.tile_coordinates==target_tile.tile_coordinates:
 							is_carrying_target = true
 							target_carried = prop
 							break
 					interact("exit")
-					player.interacting=false
+					if following_function==false:
+						player.interacting=false
 				
 func _successful_order(action: String):
-	following_orders=true
+	following_order=true
 	order_type=action
 	interact("exit")
+	if following_function==false:
+		player.interacting=false
+
+
+func _on_line_edit_function_order(list_of_orders: Variant) -> void:
+	interact("exit")
 	player.interacting=false
+	following_function=true
+	order_queue=list_of_orders

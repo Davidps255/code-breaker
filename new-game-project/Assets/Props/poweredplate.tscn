@@ -122,6 +122,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c6ptb")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_iiqhg"]
+size = Vector3(2.0145874, 1, 2.1062012)
+
 [node name="poweredplate" type="Node3D" unique_id=1963896526]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_iiqhg")
@@ -140,3 +143,12 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 0.12, 0, 0, 0, -1, 0, 0.5801192, 0)
 mesh = SubResource("ArrayMesh_ysudb")
 skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1473945213]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1592679315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026947021, 0, 0.03527832)
+shape = SubResource("BoxShape3D_iiqhg")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
