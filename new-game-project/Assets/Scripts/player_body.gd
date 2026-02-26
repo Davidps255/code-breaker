@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 			print("INTERACITNG WITH")
 			print(list_of_interactables[0])
 			list_of_interactables[0].interact("enter")
-			
+			velocity=Vector3(0,0,0)
 			
 	if Input.is_action_just_pressed("ui_cancel") and interacting==true: #cancel interaction
 		interacting=false

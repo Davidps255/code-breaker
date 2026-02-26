@@ -10,6 +10,7 @@ var interactable_type: String = "miki"
 var interacting_with_player: bool = false
 var following_orders: bool = false
 var order_type: String = "move"
+var miki_animator: AnimationPlayer
 var cardinal_vectors: Array = [Vector2(-1,0), Vector2(1,0), Vector2(0,-1), Vector2(0,1)]
 const SPEED: float = 5.0
 
@@ -19,6 +20,9 @@ var is_carrying_target: bool = false
 var is_in_hallway: bool = false
 
 var documentation_open: bool = false
+
+func _ready() -> void:
+	miki_animator=find_child("MIKIver1_2").find_child("AnimationPlayer")
 
 func find_target_destination(target):
 	tile_options=[]
@@ -51,10 +55,17 @@ func move_to_target():
 	new_velocity.y=0;
 	
 	velocity=velocity.move_toward(new_velocity, 0.25)
-	print("NEW VELOCITY: " + str(new_velocity))
+	if velocity != Vector3(0,0,0) and not interacting_with_player:
+		var old = transform.basis
+		look_at(velocity+position)
+		var new = transform.basis
+		transform.basis = lerp(old, new, .1)
 
 
 func _physics_process(delta: float) -> void:
+	if interacting_with_player and miki_animator.current_animation_position>1.1:
+			miki_animator.pause()
+			print("PAUSED")
 	if is_in_hallway:
 		#print("hallway movement")
 		nav_agent.target_position=player.global_position
@@ -99,18 +110,20 @@ func _physics_process(delta: float) -> void:
 func interact(enter_or_exit: String):
 	if is_in_hallway:
 		return
-
+		
 	interacting_with_player = true
 	line_edit.visible = true
 	
 	if enter_or_exit == "enter":
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		player.interacting = true
+		miki_animator.play("ArmatureAction")
 		
 	if enter_or_exit == "exit":
 		interacting_with_player = false
 		line_edit.visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		miki_animator.play()
 
 func _on_line_edit_basic_order(object: String, action: String, parameter: String) -> void:
 	if action=="move":

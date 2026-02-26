@@ -9,7 +9,11 @@ extends Node3D
 @export var tutorial_2_floor_tiles: Node3D
 
 @export var tutorial_3: Node3D
+@export var tutorial_3_props: Node3D
+@export var tutorial_3_floor_tiles: Node3D
+
 @export var miki: CharacterBody3D
+
 
 var hallway_1_entered: bool = false
 var tutorial_2_entered: bool = false
