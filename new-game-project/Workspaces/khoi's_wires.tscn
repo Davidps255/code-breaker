@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://ir7pulxd2vfw"]
+
+[ext_resource type="Script" uid="uid://dmxo2tebqtigt" path="res://Assets/Scripts/khoi's_wires.gd" id="1_g273d"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w3f5o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3f5o"]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_w3f5o"]
+
+[node name="Khoi\'s wires" type="Node3D" unique_id=1296640357]
+script = ExtResource("1_g273d")
+
+[node name="Room1wires" type="Node3D" parent="." unique_id=2015324698]
+
+[node name="wire1" type="Node3D" parent="Room1wires" unique_id=930235447]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room1wires/wire1" unique_id=2114098385]
+transform = Transform3D(0.05, 0, 0, 0, -2.2729921e-07, -0.05, 0, 5.2, -2.1855695e-09, -1, 2.2, -0.8)
+mesh = SubResource("CylinderMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
+
+[node name="Room2wires" type="Node3D" parent="." unique_id=1718313248]
+
+[node name="wire1" type="Node3D" parent="Room2wires" unique_id=1345614960]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room2wires/wire1" unique_id=1450234959]
+transform = Transform3D(0.05, 0, 0, 0, -2.3167037e-07, -0.05, 0, 5.3, -2.1855695e-09, -1, 2.2, -15.6)
+mesh = SubResource("CylinderMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room2wires/wire1" unique_id=390895737]
+transform = Transform3D(-2.1855695e-09, -0.5, 0, -2.1855695e-09, 9.553427e-16, -0.05, 0.05, -2.1855694e-08, -2.1855695e-09, -1.5, 2.2, -10.3)
+mesh = SubResource("CylinderMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Room2wires/wire1" unique_id=40204974]
+transform = Transform3D(-2.1855695e-09, -0.05, 2.1855695e-09, 0, -2.1855695e-09, -0.05, 0.05, -2.1855695e-09, 9.553427e-17, -1, 2.2, -10.3)
+mesh = SubResource("SphereMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
+
+[node name="wire2" type="Node3D" parent="Room2wires" unique_id=1484172423]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room2wires/wire2" unique_id=1664887847]
+transform = Transform3D(0.05, 0, 0, 0, -2.2729921e-07, -0.05, 0, 5.2, -2.1855695e-09, 0.5, 2.2, -15.6)
+mesh = SubResource("CylinderMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
+
+[node name="Room3wires" type="Node3D" parent="." unique_id=1767129063]
+
+[node name="wire3" type="Node3D" parent="Room3wires" unique_id=1454219812]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room3wires/wire3" unique_id=203777825]
+transform = Transform3D(-2.1855695e-09, -0.2, 0, 0.05, -8.742278e-09, 0, 0, 0, 0.05, 3, 3.5, -31.6)
+mesh = SubResource("CylinderMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
+
+[node name="wire1" type="Node3D" parent="Room3wires" unique_id=407806492]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room3wires/wire1" unique_id=790317119]
+transform = Transform3D(0.05, 0, 0, 0, -2.2729921e-07, -0.05, 0, 5.2, -2.1855695e-09, 0.5, 2.2, -30)
+mesh = SubResource("CylinderMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
+
+[node name="wire2" type="Node3D" parent="Room3wires" unique_id=982394194]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room3wires/wire2" unique_id=2100362099]
+transform = Transform3D(0.05, 0, 0, 0, -2.2729921e-07, -0.05, 0, 5.2, -2.1855695e-09, -1, 2.2, -30)
+mesh = SubResource("CylinderMesh_w3f5o")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3f5o")
