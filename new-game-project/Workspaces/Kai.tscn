@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://ce3iogoj0bmus" path="res://Assets/Scripts/PlayerBody.gd" id="1_7hkgt"]
 [ext_resource type="Script" uid="uid://3y574jykqf4e" path="res://Assets/Scripts/tutorial_game_controller.gd" id="1_ads8o"]
 [ext_resource type="Texture2D" uid="uid://dcy64kuh0csjo" path="res://Assets/Temporary Documentation Command Images/Screenshot 2026-01-31 154127.png" id="2_jgxto"]
-[ext_resource type="Script" uid="uid://kra307kfo7ta" path="res://Assets/Scripts/ui.gd" id="2_vtc10"]
+[ext_resource type="Script" uid="uid://kra307kfo7ta" path="res://Assets/Scripts/DocumentationUI.gd" id="2_vtc10"]
 [ext_resource type="PackedScene" uid="uid://dwbe6hay4jx22" path="res://Assets/UI/GogglesOverlay.tscn" id="3_77h55"]
 [ext_resource type="Script" uid="uid://bweuqqk2mmc0s" path="res://Assets/Scripts/miki.gd" id="5_pcieh"]
 [ext_resource type="Script" uid="uid://c7ptnvy482mtr" path="res://Assets/Scripts/floor_tile.gd" id="5_qiiir"]
 [ext_resource type="PackedScene" uid="uid://75rhq0lcu6w0" path="res://Assets/Props/mik_iver_1_2.tscn" id="7_c54ai"]
-[ext_resource type="Script" uid="uid://clbwjn4vp184c" path="res://Assets/Scripts/command_line.gd" id="7_k2u4g"]
+[ext_resource type="Script" uid="uid://clbwjn4vp184c" path="res://Assets/Scripts/CommandLine.gd" id="7_k2u4g"]
 [ext_resource type="PackedScene" uid="uid://3sawbee5aq3x" path="res://Assets/Props/metal_box.tscn" id="8_t7fgv"]
 [ext_resource type="PackedScene" uid="uid://j1g8ui25lbny" path="res://Assets/Props/pressure_plate.tscn" id="9_pdj0w"]
 [ext_resource type="Script" uid="uid://c4yh8vf3e8t41" path="res://Assets/Scripts/tutorial_activation_manager.gd" id="11_jpjng"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://dcfh4mablfr0l" path="res://Assets/Props/3d_printer.tscn" id="12_qdb1i"]
 [ext_resource type="PackedScene" uid="uid://bc2gdy7s52o10" path="res://Assets/Props/lever.tscn" id="13_ads8o"]
 [ext_resource type="PackedScene" uid="uid://beiornugxblea" path="res://Assets/Props/tutorialRoom2Edited.fbx" id="14_dhjiw"]
+[ext_resource type="Script" uid="uid://b163v786fbp4g" path="res://Assets/Scripts/UIManager.gd" id="17_ug6q5"]
+[ext_resource type="PackedScene" uid="uid://cjs2rm2pkcodj" path="res://Workspaces/DocumentationUI.tscn" id="18_5fa0g"]
+[ext_resource type="PackedScene" uid="uid://dk3avc27r5esr" path="res://Workspaces/PauseMenu.tscn" id="19_dcg57"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o4uuu"]
 
@@ -2639,6 +2642,28 @@ shape = SubResource("BoxShape3D_qdb1i")
 
 [node name="tutorialRoom2Edited" parent="." unique_id=1594398672 instance=ExtResource("14_dhjiw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3574798, 0, -29.95171)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=99654313]
+
+[node name="UI Manager" type="Control" parent="UI" unique_id=1208441672 node_paths=PackedStringArray("documentation_ui", "pause_menu")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_ug6q5")
+documentation_ui = NodePath("DocumentationUI")
+pause_menu = NodePath("Pause Menu")
+
+[node name="DocumentationUI" parent="UI/UI Manager" unique_id=1379384961 instance=ExtResource("18_5fa0g")]
+layout_mode = 0
+offset_top = 25.0
+offset_bottom = 25.0
+
+[node name="Pause Menu" parent="UI/UI Manager" unique_id=376374084 instance=ExtResource("19_dcg57")]
+layout_mode = 1
+offset_right = 1112.0
+offset_bottom = 608.0
 
 [connection signal="body_entered" from="Player/InteractArea" to="Player" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Player/InteractArea" to="Player" method="_on_interact_area_body_exited"]

@@ -1,6 +1,6 @@
 extends Control
 
-var level1: String = "res://Workspaces/Room1.tscn"
+var level1: String = "res://Workspaces/Kai.tscn"
 
 @onready var OptionsPanel: Panel = $OptionsPanel
 
