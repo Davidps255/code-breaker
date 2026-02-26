@@ -5,6 +5,8 @@ class_name CommandLine
 
 var function_array: Array[String]
 
+signal basic_order(object: String, action: String, parameter: String)
+
 # index in function array 
 var index: int = 0
 
@@ -48,6 +50,7 @@ func parse_command(input: String):
 	print(object)
 	print(action)
 	print(argument)
+	emit_signal("basic_order", object, action, argument)
 
 
 # actions

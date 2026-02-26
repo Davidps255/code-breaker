@@ -28,6 +28,7 @@ buses/default_bus_layout="uid://cg78sxeh3hdbr"
 TransitionScreen="*uid://c265iwx78kw7k"
 SoundManager="*uid://ca4nsnuu6ob0q"
 GameManager="*uid://b4ao4y03l1aw8"
+GlobalVariables="*uid://l0fyej2oi56r"
 
 [display]
 
