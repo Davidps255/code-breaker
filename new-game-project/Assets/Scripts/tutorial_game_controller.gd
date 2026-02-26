@@ -20,7 +20,7 @@ var tutorial_2_entered: bool = false
 
 
 func _enter_tree() -> void:
-	_set_tiles(5, tutorial_1_floor_tiles)
+	_set_tiles(7, tutorial_1_floor_tiles)
 
 
 func _on_hallway_1_entrance_body_entered(body: Node3D) -> void:
@@ -36,7 +36,7 @@ func _on_hallway_1_exit_body_entered(body: Node3D) -> void:
 			tutorial_1_pressure_plate.emit_signal("unpressed")
 			miki.props = tutorial_2_props
 			print(miki.props.get_children())
-			_set_tiles(5, tutorial_2_floor_tiles)
+			_set_tiles(7, tutorial_2_floor_tiles)
 			tutorial_2_entered = true
 
 

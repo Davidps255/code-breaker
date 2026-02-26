@@ -115,6 +115,8 @@ func interact(enter_or_exit: String):
 	line_edit.visible = true
 	
 	if enter_or_exit == "enter":
+		if following_orders:
+			return
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		player.interacting = true
 		miki_animator.play("ArmatureAction")

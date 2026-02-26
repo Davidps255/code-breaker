@@ -509,38 +509,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m0d2d")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wneg0"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_1v46j"]
-_surfaces = [{
-"aabb": AABB(-1.816972, -0.9535682, -1.077386, 3.633944, 1.9535681, 1.9999998),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("kjAAAP//AAAAAP//AAAAAAAA//+VwgAAkjAAAAAAAAD/////AAAAAGzPAAD//wAA/////5XCAABszwAAAAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ty0pg"]
-resource_name = "MIKIver1_2_Cube_004"
-_surfaces = [{
-"aabb": AABB(-1.816972, -0.9535682, -1.077386, 3.633944, 1.9535681, 1.9999998),
-"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_wneg0"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("kjAAAP//tOMAAP//AAC23QAA//+Vwo3gkjAAAAAAQ+GSMAAAAAD///////8AAP//AAD//wAA//9szwAAAAD//2zPAAAAAC/L/////5XCs8v/////AADazWzPAAD//4TJbM8AAP//iLsAAP//lcINwf////+Vwl2zkjAAAP//3s2SMAAAAAD/v2zPAAD///+/bM8AAAAA/7+SMAAA////v/////8AAP//AAD//5XC//8AAP//AAD///////+Vwv//Tda42rjQjN5w067cGdQ63Ka7V8SMwHK/CbX1yvXKCbXxKXkzCynIM38l/zQQLWYysPP3DYPzVwz+880QK/MpCQAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_1v46j")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3uyd"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_77ljr"]
@@ -688,11 +656,6 @@ skeleton = NodePath("")
 [node name="monitor frame" type="MeshInstance3D" parent="." unique_id=1868938423]
 transform = Transform3D(1.1950936, 0, 0, 0, 0.7947946, 0, 0, 0, 0.40377164, 0, 0, 1.6229749)
 mesh = SubResource("ArrayMesh_6cfg8")
-skeleton = NodePath("")
-
-[node name="Cube" type="MeshInstance3D" parent="." unique_id=669581210]
-transform = Transform3D(0.87368685, 0, 0, 0, 0.87368685, 0, 0, 0, 0.87368685, 0, 0, -1.5854433)
-mesh = SubResource("ArrayMesh_ty0pg")
 skeleton = NodePath("")
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="." unique_id=1730625532]
