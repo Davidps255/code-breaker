@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://csqjfjpjaa3cf"
+path.s3tc="res://.godot/imported/2026_02_17_tutorialRoom3_Gemini_Generated_Image_92vlc92vlc92vlc9.png-5656e71fe025a16e0e601b0e48c269c3.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "229af9c0046ab64ccfce58222d21845b"
+}
+
+[deps]
+
+source_file="res://Assets/Props/Tutorial Room 3 GLB/2026_02_17_tutorialRoom3_Gemini_Generated_Image_92vlc92vlc92vlc9.png"
+dest_files=["res://.godot/imported/2026_02_17_tutorialRoom3_Gemini_Generated_Image_92vlc92vlc92vlc9.png-5656e71fe025a16e0e601b0e48c269c3.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

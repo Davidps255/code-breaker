@@ -1,6 +1,8 @@
 extends NavigationRegion3D
 
 var coordinates: Vector2
+@export var inacessible: bool = false
+
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if ("tile_coordinates" in body):

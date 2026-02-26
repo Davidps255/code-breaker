@@ -1,6 +1,5 @@
 extends Node3D
 
-const SPEED: float = 5.0
 @export var script_name: String
 @export var script_type: String = "printer"
 @export var is_stationary: bool = true

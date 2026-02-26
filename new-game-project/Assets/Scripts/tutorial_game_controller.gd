@@ -5,6 +5,7 @@ extends Node3D
 @export var tutorial_1_floor_tiles: Node3D
 
 @export var tutorial_2: Node3D
+@export var tutorial_2_pressure_plate: Node3D
 @export var tutorial_2_props: Node3D
 @export var tutorial_2_floor_tiles: Node3D
 
@@ -17,7 +18,8 @@ extends Node3D
 
 var hallway_1_entered: bool = false
 var tutorial_2_entered: bool = false
-
+var hallway_2_entered: bool = false
+var tutorial_3_entered: bool = false 
 
 func _enter_tree() -> void:
 	_set_tiles(7, tutorial_1_floor_tiles)
@@ -55,3 +57,20 @@ func _set_tiles(x_length: int, tilemanager: Node3D) -> void:
 			y+=1
 			GlobalVariables.tile_list.append(row_list.duplicate(true))
 			row_list=[]
+
+
+func _on_hallway_2_entrance_body_entered(body: Node3D) -> void:
+	if hallway_1_entered == false:
+		if "is_player" in body:
+			miki.is_in_hallway = true
+			hallway_2_entered = true
+
+
+func _on_hallway_2_exit_body_entered(body: Node3D) -> void:
+	if tutorial_3_entered == false:
+		if "interactable_type" in body and body.interactable_type=="miki":
+			miki.is_in_hallway = false
+			tutorial_2_pressure_plate.emit_signal("unpressed")
+			miki.props = tutorial_3_props
+			_set_tiles(7, tutorial_3_floor_tiles)
+			tutorial_3_entered = true

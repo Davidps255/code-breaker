@@ -65,7 +65,6 @@ func move_to_target():
 func _physics_process(delta: float) -> void:
 	if interacting_with_player and miki_animator.current_animation_position>1.1:
 			miki_animator.pause()
-			print("PAUSED")
 	if is_in_hallway:
 		#print("hallway movement")
 		nav_agent.target_position=player.global_position
@@ -87,7 +86,7 @@ func _physics_process(delta: float) -> void:
 			if (self.global_position.distance_to(prop_to_move.global_position) < 3.0):
 				is_carrying_target = true
 				prop_to_move.is_template=false
-			print(self.global_position.distance_to(prop_to_move.global_position))
+				
 		if is_carrying_target == true:
 			prop_to_move.global_position = self.position + Vector3(0, 4, 0)
 			find_target_destination(target_prop)
