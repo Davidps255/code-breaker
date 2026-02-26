@@ -5,6 +5,8 @@ class_name CommandLine
 
 var function_array: Array[String]
 
+signal basic_order(object: String, action: String, parameter: String)
+
 # index in function array 
 var index: int = 0
 

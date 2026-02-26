@@ -1,0 +1,313 @@
+[gd_scene format=3 uid="uid://dv3gnqsc63446"]
+
+[ext_resource type="Texture2D" uid="uid://dh48jm5lfyihf" path="res://Assets/UI/dropdown.png" id="1_g5n55"]
+[ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/main_menu.gd" id="1_iq3f8"]
+[ext_resource type="PackedScene" uid="uid://cju2xotny3c5u" path="res://Workspaces/Kai.tscn" id="2_1tal6"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iq3f8"]
+[ext_resource type="AudioStream" uid="uid://bfucoxidompou" path="res://menu_music.res" id="5_whw48"]
+[ext_resource type="AudioStream" uid="uid://8nnigmd824y" path="res://Assets/Audio/jiafei-scream.mp3" id="6_oqwj1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s2xg"]
+bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j10ko"]
+bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wte75"]
+bg_color = Color(0.21568628, 0.30980393, 0.4, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmrb6"]
+bg_color = Color(0.16470589, 0.21176471, 0.27058825, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 6
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tal6"]
+bg_color = Color(0.11372549, 0.13333334, 0.16078432, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[node name="Main Menu" type="Control" unique_id=1513136603]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iq3f8")
+start_scene = ExtResource("2_1tal6")
+
+[node name="BackgroundPanel" type="Panel" parent="." unique_id=1114812554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0s2xg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=155335776]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46400002
+anchor_top = 0.177
+anchor_right = 0.46400002
+anchor_bottom = 0.177
+offset_left = -494.528
+offset_top = -68.696
+offset_right = 493.472
+offset_bottom = 68.304
+theme_override_constants/separation = 20
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1293309186]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 40
+
+[node name="DropDown" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=2073892604]
+modulate = Color(0.36846328, 0.3909138, 0.43018863, 1)
+layout_mode = 2
+texture = ExtResource("1_g5n55")
+expand_mode = 3
+
+[node name="GameIcon" type="TextureRect" parent="HBoxContainer" unique_id=1039424238]
+layout_mode = 2
+texture = ExtResource("2_iq3f8")
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer" unique_id=1417340356]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Code Breaker"
+
+[node name="Line2D" type="Line2D" parent="." unique_id=642225575]
+points = PackedVector2Array(128, 160, 128, 260, 246, 260, 128, 260, 128, 410, 247, 410, 128, 410, 128, 560, 247, 560)
+width = 6.0
+default_color = Color(0.21960784, 0.23529412, 0.2627451, 1)
+joint_mode = 2
+begin_cap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2113779661]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.365
+anchor_top = 0.532
+anchor_right = 0.365
+anchor_bottom = 0.532
+offset_left = -171.48001
+offset_top = -140.236
+offset_right = 171.51999
+offset_bottom = 267.264
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+metadata/_edit_group_ = true
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1040825910 groups=["Button"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=144045279 groups=["Button"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1718137233 groups=["Button"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tmrb6")
+text = "Quit"
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=1029737162]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75600004
+anchor_top = 0.591
+anchor_right = 0.75600004
+anchor_bottom = 0.591
+offset_left = -207.91205
+offset_top = -185.96802
+offset_right = 208.08795
+offset_bottom = 186.03198
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1tal6")
+metadata/_edit_group_ = true
+
+[node name="MasterPanel" type="Panel" parent="OptionsPanel" unique_id=83824305]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 61.0
+offset_right = 369.0
+offset_bottom = 101.0
+metadata/_edit_group_ = true
+
+[node name="MasterLabel" type="Label" parent="OptionsPanel/MasterPanel" unique_id=1495226713]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49100003
+anchor_top = -0.56200004
+anchor_right = 0.49100003
+anchor_bottom = -0.56200004
+offset_left = -117.647
+offset_top = -22.519999
+offset_right = 117.353
+offset_bottom = 22.480001
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="OptionsPanel/MasterPanel" unique_id=555495392 groups=["Slider"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.52500004
+anchor_right = 0.50200003
+anchor_bottom = 0.52500004
+offset_left = -150.13402
+offset_top = -8.000002
+offset_right = 149.86598
+offset_bottom = 7.999998
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 11
+
+[node name="MusicPanel" type="Panel" parent="OptionsPanel" unique_id=195295608]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 158.0
+offset_right = 369.0
+offset_bottom = 198.0
+metadata/_edit_group_ = true
+
+[node name="MusicLabel" type="Label" parent="OptionsPanel/MusicPanel" unique_id=436628912]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49100003
+anchor_top = -0.56200004
+anchor_right = 0.49100003
+anchor_bottom = -0.56200004
+offset_left = -117.647
+offset_top = -22.519999
+offset_right = 117.353
+offset_bottom = 22.480001
+theme_override_font_sizes/font_size = 32
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="OptionsPanel/MusicPanel" unique_id=1345426042 groups=["Slider"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.52500004
+anchor_right = 0.50200003
+anchor_bottom = 0.52500004
+offset_left = -150.13402
+offset_top = -8.000002
+offset_right = 149.86598
+offset_bottom = 7.999998
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 11
+
+[node name="SFXPanel" type="Panel" parent="OptionsPanel" unique_id=1770256706]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 251.0
+offset_right = 369.0
+offset_bottom = 291.0
+metadata/_edit_group_ = true
+
+[node name="SFXLabel" type="Label" parent="OptionsPanel/SFXPanel" unique_id=824438716]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49100003
+anchor_top = -0.56200004
+anchor_right = 0.49100003
+anchor_bottom = -0.56200004
+offset_left = -117.647
+offset_top = -22.519999
+offset_right = 117.353
+offset_bottom = 22.480001
+theme_override_font_sizes/font_size = 32
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="OptionsPanel/SFXPanel" unique_id=292816554 groups=["Slider"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.52500004
+anchor_right = 0.50200003
+anchor_bottom = 0.52500004
+offset_left = -150.13402
+offset_top = -8.000002
+offset_right = 149.86598
+offset_bottom = 7.999998
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 11
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=323984362]
+stream = ExtResource("5_whw48")
+bus = &"Music"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="." unique_id=1820488365]
+stream = ExtResource("6_oqwj1")
+volume_db = -5.0
+bus = &"SFX"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="OptionsPanel/MasterPanel/MasterSlider" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/MusicPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/SFXPanel/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
