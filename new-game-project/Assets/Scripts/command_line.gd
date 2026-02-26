@@ -16,12 +16,14 @@ func received_command(input: String):
 	input = input.remove_chars(" ") #removes spaces
 	input = input.to_lower() #to lowercase
 	
+	
 	if (input == "end"):
 		index = 0
 	elif (input.begins_with("function") or index > 0):
-		write_function(input)
-	elif input.contains("/") and input.contains("@"):
-		parse_command(input)
+		write_function(input) #puts commands into array
+	elif ((input.contains("/") and input.contains("@")) 
+			and input.find("@") - input.find("/") > 2):
+		parse_command(input) #separates object, action, and argument
 	else:
 		print("invalid command")
 	
@@ -33,6 +35,7 @@ func write_function(input: String):
 		# get the name of created function
 		function_array[index] = input.substr(8)
 	else:
+		# adds command to array
 		function_array[index] = input
 
 
@@ -50,9 +53,3 @@ func parse_command(input: String):
 	print(object)
 	print(action)
 	print(argument)
-	emit_signal("basic_order", object, action, argument)
-
-
-# actions
-	#north, south, east, west (movment, takes numerical argument)
-	#
