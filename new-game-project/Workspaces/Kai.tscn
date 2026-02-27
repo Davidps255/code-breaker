@@ -307,6 +307,9 @@ size = Vector3(9.69165, 1, 45.60437)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjjd0"]
 size = Vector3(2.9692383, 1, 2.9810486)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_po35a"]
+size = Vector3(1, 2.291809, 2.5170898)
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_qiiir"]
 vertices = PackedVector3Array(-0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, 0.5, 1, -0.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
@@ -1912,6 +1915,22 @@ shape = SubResource("BoxShape3D_kjjd0")
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1768121453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8197207, 4.972936, -32.734474)
 shape = SubResource("BoxShape3D_kjjd0")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=772632866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.437041, 3.128065, -7.5160885)
+shape = SubResource("BoxShape3D_po35a")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1570365179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8167086, 3.128065, -7.5160885)
+shape = SubResource("BoxShape3D_po35a")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1035305709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8167086, 3.128065, -22.57242)
+shape = SubResource("BoxShape3D_po35a")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=368618330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5023541, 3.128065, -22.57242)
+shape = SubResource("BoxShape3D_po35a")
 
 [node name="FloorCollider" type="CSGBox3D" parent="TutorialRoom" unique_id=1857913405]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65678, -13.323517)
