@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dcfh4mablfr0l" path="res://Assets/Props/3d_printer.tscn" id="12_qdb1i"]
 [ext_resource type="PackedScene" uid="uid://bc2gdy7s52o10" path="res://Assets/Props/lever.tscn" id="13_ads8o"]
 [ext_resource type="PackedScene" uid="uid://beiornugxblea" path="res://Assets/Props/tutorialRoom2Edited.fbx" id="14_dhjiw"]
+[ext_resource type="PackedScene" uid="uid://ir7pulxd2vfw" path="res://Workspaces/khoi's_wires.tscn" id="17_qm2u2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o4uuu"]
 
@@ -2639,6 +2640,8 @@ shape = SubResource("BoxShape3D_qdb1i")
 
 [node name="tutorialRoom2Edited" parent="." unique_id=1594398672 instance=ExtResource("14_dhjiw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3574798, 0, -29.95171)
+
+[node name="Khoi\'s wires" parent="." unique_id=1296640357 instance=ExtResource("17_qm2u2")]
 
 [connection signal="body_entered" from="Player/InteractArea" to="Player" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Player/InteractArea" to="Player" method="_on_interact_area_body_exited"]
