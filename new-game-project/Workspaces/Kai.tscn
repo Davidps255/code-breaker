@@ -301,6 +301,12 @@ size = Vector3(12, 12, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2u4g"]
 size = Vector3(10, 10, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0c3k"]
+size = Vector3(9.69165, 1, 45.60437)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjjd0"]
+size = Vector3(2.9692383, 1, 2.9810486)
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_qiiir"]
 vertices = PackedVector3Array(-0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, 0.5, 1, -0.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
@@ -623,7 +629,7 @@ shadow_mesh = SubResource("ArrayMesh_6cs8p")
 
 [sub_resource type="Animation" id="Animation_oudws"]
 resource_name = "DoorLeft|ArmatureAction"
-length = 1.1666666
+length = 1.0333333
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -1582,7 +1588,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aply4"]
-size = Vector3(0.2368164, 1, 4.3355103)
+size = Vector3(0.2368164, 2.7817383, 4.3355103)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d66d5"]
 size = Vector3(1, 2.083496, 0.33984375)
@@ -1605,7 +1611,7 @@ tutorial_3_floor_tiles = NodePath("TutorialRoom3/FloorTiles")
 miki = NodePath("Miki")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=458031514 node_paths=PackedStringArray("neck", "camera", "documentation_ui", "interact_area")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.9793832, -23.140776)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.9793832, 0.8191891)
 script = ExtResource("1_7hkgt")
 neck = NodePath("Neck")
 camera = NodePath("Neck/Camera3D")
@@ -1766,7 +1772,7 @@ scale = Vector2(0.884, 0.884)
 texture = ExtResource("2_jgxto")
 
 [node name="Miki" type="CharacterBody3D" parent="." unique_id=1406810247 node_paths=PackedStringArray("player", "line_edit", "props")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9181963, -24.267881)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6891073, -1.5493225)
 script = ExtResource("5_pcieh")
 player = NodePath("../Player")
 line_edit = NodePath("LineEdit")
@@ -1784,7 +1790,7 @@ offset_left = 60.0
 offset_top = 22.0
 offset_right = 968.0
 offset_bottom = 367.0
-theme_override_colors/font_color = Color(0.6879585, 0.9489334, 0.7674432, 1)
+theme_override_colors/font_color = Color(0.88141626, 0.8742726, 0.8645375, 1)
 script = ExtResource("7_k2u4g")
 line_edit = NodePath(".")
 
@@ -1886,6 +1892,26 @@ shape = SubResource("BoxShape3D_k2u4g")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1182953433]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8355765, 6.713233, -5.730652)
 shape = SubResource("BoxShape3D_k2u4g")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1900496251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13342285, 6.7806892, -14.509705)
+shape = SubResource("BoxShape3D_w0c3k")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1628076831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056396484, 4.972936, -7.161503)
+shape = SubResource("BoxShape3D_kjjd0")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1880988341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056396484, 4.972936, -22.158419)
+shape = SubResource("BoxShape3D_kjjd0")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1711419760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5969197, 4.972936, -37.421314)
+shape = SubResource("BoxShape3D_kjjd0")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="TutorialRoom/Walls" unique_id=1768121453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8197207, 4.972936, -32.734474)
+shape = SubResource("BoxShape3D_kjjd0")
 
 [node name="FloorCollider" type="CSGBox3D" parent="TutorialRoom" unique_id=1857913405]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65678, -13.323517)
@@ -2772,7 +2798,7 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, -9.557588e-10, 3.7947234e-10, -0.0011645927)
 bones/0/enabled = true
-bones/0/position = Vector3(9.62731e-10, 0, -0.012751757)
+bones/0/position = Vector3(9.62731e-10, 0, 3.7598656e-06)
 bones/0/rotation = Quaternion(0.7071068, 0, 0, 0.7071067)
 bones/0/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/1/name = "Bone_end"
@@ -2784,7 +2810,7 @@ bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="RightDoor" type="BoneAttachment3D" parent="TutorialRoom2/door frame/DoorLeft/Skeleton3D" unique_id=1537713840]
-transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.62731e-10, 0, -0.012751757)
+transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.62731e-10, 0, 3.7598656e-06)
 bone_name = "Bone"
 bone_idx = 0
 
@@ -2807,7 +2833,7 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, 9.627309e-10, 0, -0.0010712084)
 bones/0/enabled = true
-bones/0/position = Vector3(9.627309e-10, 0, -0.012751757)
+bones/0/position = Vector3(9.627309e-10, 0, 3.7598656e-06)
 bones/0/rotation = Quaternion(0.7071068, 0, 0, 0.7071067)
 bones/0/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/1/name = "Bone_end"
@@ -2819,7 +2845,7 @@ bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="LeftDoor" type="BoneAttachment3D" parent="TutorialRoom2/door frame/Doorright/Skeleton3D" unique_id=563525534]
-transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.627309e-10, 0, -0.012751757)
+transform = Transform3D(1, 0, 0, 0, -1.1920928e-07, -0.9999999, 0, 0.9999999, -1.1920928e-07, 9.627309e-10, 0, 3.7598656e-06)
 bone_name = "Bone"
 bone_idx = 0
 
@@ -3924,11 +3950,11 @@ transform = Transform3D(1.0000007, 0, -9.313226e-10, 0, 1, 0, 9.313226e-10, 0, 1
 shape = SubResource("BoxShape3D_k2u4g")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="TutorialRoom3/Walls" unique_id=944164465]
-transform = Transform3D(1.0000215, 0, -2.561137e-08, 0, 1, 0, 2.561137e-08, 0, 1.0000215, 0.34036276, -3.156392, -4.192932)
+transform = Transform3D(1.0000261, 0, -3.1199306e-08, 0, 1, 0, 3.1199306e-08, 0, 1.0000261, 0.34036276, -2.265523, -4.192932)
 shape = SubResource("BoxShape3D_aply4")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="TutorialRoom3/Walls" unique_id=1323782811]
-transform = Transform3D(1.0000161, 0, -1.9557774e-08, 0, 1, 0, 1.9557774e-08, 0, 1.0000161, 3.3483605, -2.8068128, -2.2618637)
+transform = Transform3D(1.0000199, 0, -2.3748726e-08, 0, 1, 0, 2.3748726e-08, 0, 1.0000199, 3.348361, -2.8068128, -2.2618637)
 shape = SubResource("BoxShape3D_d66d5")
 
 [node name="FloorTiles" type="Node3D" parent="TutorialRoom3" unique_id=142603176]
