@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dcy64kuh0csjo" path="res://Assets/Temporary Documentation Command Images/Screenshot 2026-01-31 154127.png" id="2_jgxto"]
 [ext_resource type="Script" uid="uid://kra307kfo7ta" path="res://Assets/Scripts/ui.gd" id="2_vtc10"]
 [ext_resource type="PackedScene" uid="uid://dwbe6hay4jx22" path="res://Assets/UI/GogglesOverlay.tscn" id="3_77h55"]
+[ext_resource type="Material" uid="uid://ocnyjvcbec1i" path="res://Assets/Shaders/FullScreenOutline.material" id="4_aply4"]
 [ext_resource type="Script" uid="uid://bweuqqk2mmc0s" path="res://Assets/Scripts/miki.gd" id="5_pcieh"]
 [ext_resource type="Script" uid="uid://c7ptnvy482mtr" path="res://Assets/Scripts/floor_tile.gd" id="5_qiiir"]
 [ext_resource type="PackedScene" uid="uid://75rhq0lcu6w0" path="res://Assets/Props/mik_iver_1_2.tscn" id="7_c54ai"]
@@ -32,6 +33,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hkgt"]
 height = 2.0375977
+
+[sub_resource type="QuadMesh" id="QuadMesh_d66d5"]
+size = Vector2(2, 2)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k2u4g"]
 radius = 0.865
@@ -1636,6 +1640,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1727152, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024764717, 0.008695126, -0.017843246)
 
 [node name="GogglesOverlay" parent="Player/Neck/Camera3D" unique_id=1595990700 instance=ExtResource("3_77h55")]
+
+[node name="Outline" type="MeshInstance3D" parent="Player/Neck/Camera3D" unique_id=49361437]
+mesh = SubResource("QuadMesh_d66d5")
+surface_material_override/0 = ExtResource("4_aply4")
 
 [node name="InteractArea" type="Area3D" parent="Player" unique_id=380140667]
 

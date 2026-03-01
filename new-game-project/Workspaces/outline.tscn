@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cfp2u2uq4wigl"]
+
+[ext_resource type="Script" uid="uid://b3ltm0ebyppv4" path="res://Assets/Scripts/PostProcess.gd" id="1_c4dti"]
+[ext_resource type="Material" uid="uid://ocnyjvcbec1i" path="res://Assets/Shaders/FullScreenOutline.material" id="1_snndb"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_r82y8"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("1_c4dti")
+metadata/_custom_type_script = "uid://b3ltm0ebyppv4"
+
+[sub_resource type="Compositor" id="Compositor_ygytm"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_r82y8")])
+
+[sub_resource type="BoxMesh" id="BoxMesh_evlqk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_snndb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_c4dti"]
+size = Vector2(2, 2)
+
+[node name="Outline" type="Node3D" unique_id=985945210]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=810699875]
+compositor = SubResource("Compositor_ygytm")
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=150974982]
+transform = Transform3D(1, 0, 0, 0, 3.3463614, 0, 0, 0, 5.1200705, 3.1534755, 0, 0)
+mesh = SubResource("BoxMesh_evlqk")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=676174343]
+mesh = SubResource("BoxMesh_snndb")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=871066303]
+transform = Transform3D(0.22539313, 0, -0.9742679, 0, 1, 0, 0.9742679, 0, 0.22539313, -2.5644617, 0.9066601, 1.3212205)
+
+[node name="Outline" type="MeshInstance3D" parent="Camera3D" unique_id=1668411963]
+mesh = SubResource("QuadMesh_c4dti")
+surface_material_override/0 = ExtResource("1_snndb")
