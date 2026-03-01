@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bc5kfhelntbx2"
+path="res://.godot/imported/OutlinePostProcess.glsl-2748e9494bff51d2ba0e66abb40155f3.res"
+
+[deps]
+
+source_file="res://Assets/Shaders/holder/OutlinePostProcess.glsl"
+dest_files=["res://.godot/imported/OutlinePostProcess.glsl-2748e9494bff51d2ba0e66abb40155f3.res"]
+
+[params]
+

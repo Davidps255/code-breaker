@@ -16,7 +16,7 @@ func _render_callback(effect_callback_type: int, render_data : RenderData) -> vo
 	if not rd: return
 	
 	var scene_buffers : RenderSceneBuffersRD = render_data.get_render_scene_buffers()
-	var scene_data : RenderSceneDataRD = render_data.get_render_scene_buffers()
+	var scene_data : RenderSceneDataRD = render_data.get_render_scene_data()
 	if not scene_buffers or not scene_data: return
 	
 	var size : Vector2i = scene_buffers.get_internal_size()
@@ -25,7 +25,7 @@ func _render_callback(effect_callback_type: int, render_data : RenderData) -> vo
 	var x_groups : int = size.x / 16 + 1.0
 	var y_groups : int = size.y / 16 + 1.0
 	
-	var inv_proj_mat : Projection = scene_data.get_cam_projection(). inverse()
+	var inv_proj_mat : Projection = scene_data.get_cam_projection().inverse()
 	
 	var push_constants : PackedFloat32Array = PackedFloat32Array()
 	push_constants.append(size.x)
@@ -46,7 +46,7 @@ func _render_callback(effect_callback_type: int, render_data : RenderData) -> vo
 		
 		var sampler_state : RDSamplerState = RDSamplerState.new()
 		sampler_state.min_filter = RenderingDevice.SAMPLER_FILTER_LINEAR
-		sampler_state.mag_filler = RenderingDevice.SAMPLER_FILTER_LINEAR
+		sampler_state.mag_filter = RenderingDevice.SAMPLER_FILTER_LINEAR
 		var linear_sampler : RID = rd.sampler_create(sampler_state)
 		
 		uniform = RDUniform.new()
@@ -69,6 +69,6 @@ func initialize_computer_shader() -> void:
 	rd = RenderingServer.get_rendering_device()
 	if not rd: return
 	
-	var glsl_file : RDShaderFile = load("res://Assets/Shaders/PostProcess.glsl")
+	var glsl_file : RDShaderFile = load("res://Assets/Shaders/post_process.glsl")
 	shader = rd.shader_create_from_spirv(glsl_file.get_spirv())
 	pipeline = rd.compute_pipeline_create(shader)

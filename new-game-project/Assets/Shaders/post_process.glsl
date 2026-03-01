@@ -15,15 +15,15 @@ layout(push_constant, std430) uniform Params {
 void main() {
 	ivec2 pixel = ivec2(gl_GlobalInvocationID.xy);
 	vec2 size = p.screen_size;
-	vec2 uv = pxiel / size;
+	vec2 uv = pixel / size;
 	
 	if(pixel.x >= size.x || pixel.y >= size.y) return;
 	
 	float depth = texture(depth_tex, uv).r;
-	float linear_depth = 1.0 / depth * p*inv_proj_2w + p.inv_proj_3w);
-	linear_depth = clamp(linear_depth / 50, 0, 1)
+	float linear_depth = 1.0 / (depth * p.inv_proj_2w + p.inv_proj_3w);
+	linear_depth = clamp(linear_depth / 50.0, 0.0, 1.0);
 	
-	vec4 color = imageLoad(screen_tex, pixel, color);
+	vec4 color = imageLoad(screen_tex, pixel);
 	
 	color.rgb = vec3(linear_depth);
 	
