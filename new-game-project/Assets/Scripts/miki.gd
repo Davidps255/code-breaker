@@ -55,7 +55,8 @@ func find_target_destination(target):
 	if closest_tile!=null:
 		nav_agent.target_position=closest_tile.global_position
 	else:
-		print("MIKI COULD NOT FIND VIABLE PATHFIND TILE")
+		#print("MIKI COULD NOT FIND VIABLE PATHFIND TILE")
+		pass
 
 func move_to_target():
 	var current_location: Vector3 = global_position
