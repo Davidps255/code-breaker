@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cpk5cjdxsvqup"]
 
-[ext_resource type="Texture2D" uid="uid://dh48jm5lfyihf" path="res://Assets/UI/dropdown.png" id="1_g5n55"]
-[ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/main_menu.gd" id="1_iq3f8"]
-[ext_resource type="PackedScene" uid="uid://cju2xotny3c5u" path="res://Workspaces/Kai.tscn" id="2_1tal6"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iq3f8"]
-[ext_resource type="FontFile" uid="uid://dl38o7c5ra4ce" path="res://Assets/Fonts/Consolas-Regular.ttf" id="5_dkfhe"]
-[ext_resource type="AudioStream" uid="uid://bfucoxidompou" path="res://Assets/Audio/menu_music.res" id="5_whw48"]
-[ext_resource type="AudioStream" uid="uid://8nnigmd824y" path="res://Assets/Audio/jiafei-scream.mp3" id="6_oqwj1"]
+[ext_resource type="Script" uid="uid://byl7xa5x44wto" path="res://Assets/Scripts/MainMenu.gd" id="1_sjdjp"]
+[ext_resource type="Texture2D" uid="uid://dh48jm5lfyihf" path="res://Assets/UI/dropdown.png" id="3_3y8w5"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="4_1p0to"]
+[ext_resource type="FontFile" uid="uid://dl38o7c5ra4ce" path="res://Assets/Fonts/Consolas-Regular.ttf" id="5_voxpv"]
+[ext_resource type="Script" uid="uid://dola4m4ctqip8" path="res://Assets/Scripts/Options.gd" id="6_1ylmp"]
+[ext_resource type="AudioStream" uid="uid://bfucoxidompou" path="res://Assets/Audio/menu_music.res" id="6_rcvdi"]
+[ext_resource type="AudioStream" uid="uid://8nnigmd824y" path="res://Assets/Audio/jiafei-scream.mp3" id="7_mguik"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s2xg"]
 bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
@@ -93,8 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iq3f8")
-start_scene = ExtResource("2_1tal6")
+script = ExtResource("1_sjdjp")
 
 [node name="BackgroundPanel" type="Panel" parent="." unique_id=1114812554]
 layout_mode = 1
@@ -129,16 +128,16 @@ theme_override_constants/margin_bottom = 40
 [node name="DropDown" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=2073892604]
 modulate = Color(0.36846328, 0.3909138, 0.43018863, 1)
 layout_mode = 2
-texture = ExtResource("1_g5n55")
+texture = ExtResource("3_3y8w5")
 expand_mode = 3
 
 [node name="GameIcon" type="TextureRect" parent="HBoxContainer" unique_id=1039424238]
 layout_mode = 2
-texture = ExtResource("2_iq3f8")
+texture = ExtResource("4_1p0to")
 
 [node name="TitleLabel" type="Label" parent="HBoxContainer" unique_id=1417340356]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 100
 text = "Code Breaker"
 horizontal_alignment = 1
@@ -172,7 +171,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
@@ -185,7 +184,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
@@ -198,7 +197,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_j10ko")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wte75")
@@ -236,7 +235,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 370.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 32
 text = "OPTIONS"
 horizontal_alignment = 1
@@ -249,6 +248,7 @@ offset_top = 84.0
 offset_right = 394.0
 offset_bottom = 382.0
 theme = SubResource("Theme_g3r6r")
+script = ExtResource("6_1ylmp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel/ScrollContainer" unique_id=1512954128]
 layout_mode = 2
@@ -268,7 +268,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 370.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 32
 text = "Master Volume"
 horizontal_alignment = 1
@@ -299,7 +299,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 370.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 32
 text = "Music Volume"
 horizontal_alignment = 1
@@ -330,7 +330,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 370.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 32
 text = "SFX Volume"
 horizontal_alignment = 1
@@ -361,7 +361,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 370.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 32
 text = "Control Settings"
 horizontal_alignment = 1
@@ -380,7 +380,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 370.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 32
 text = "Mouse Sensitivity"
 horizontal_alignment = 1
@@ -411,26 +411,26 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 370.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("5_dkfhe")
+theme_override_fonts/font = ExtResource("5_voxpv")
 theme_override_font_sizes/font_size = 32
 text = "temp"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=323984362]
-stream = ExtResource("5_whw48")
+stream = ExtResource("6_rcvdi")
 bus = &"Music"
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="." unique_id=1820488365]
-stream = ExtResource("6_oqwj1")
+stream = ExtResource("7_mguik")
 volume_db = -20.0
 bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MasterPanel/MasterSlider" to="." method="_on_master_value_changed"]
-[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MusicPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MousePanel/MouseSlider" to="." method="_on_mouse_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MasterPanel/MasterSlider" to="OptionsPanel/ScrollContainer" method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MusicPanel/MusicSlider" to="OptionsPanel/ScrollContainer" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/SFXPanel/SFXSlider" to="OptionsPanel/ScrollContainer" method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/ScrollContainer/VBoxContainer/MousePanel/MouseSlider" to="OptionsPanel/ScrollContainer" method="_on_mouse_slider_value_changed"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

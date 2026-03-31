@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c6lcr42utnput"]
+
+[ext_resource type="Script" uid="uid://ce3iogoj0bmus" path="res://Assets/Scripts/PlayerBody.gd" id="1_w5lnp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o4uuu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hkgt"]
+height = 2.0375977
+
+[node name="Player" type="CharacterBody3D" unique_id=368349436 node_paths=PackedStringArray("neck", "camera")]
+script = ExtResource("1_w5lnp")
+neck = NodePath("Neck")
+camera = NodePath("Neck/Camera3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=232396434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4465435, 0)
+mesh = SubResource("CapsuleMesh_o4uuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1935068447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4403542, 0)
+shape = SubResource("CapsuleShape3D_7hkgt")
+
+[node name="Neck" type="Node3D" parent="." unique_id=204033347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1727152, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=430252253]

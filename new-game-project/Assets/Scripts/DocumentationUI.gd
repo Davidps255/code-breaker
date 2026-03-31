@@ -7,7 +7,6 @@ var command_4_texture: Texture2D = preload("res://Assets/Temporary Documentation
 
 @export var panel_texture_rect: TextureRect
 
-
 func _on_button_1_pressed() -> void:
 	panel_texture_rect.texture=command_1_texture
 
